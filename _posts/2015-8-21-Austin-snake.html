@@ -1,0 +1,77 @@
+---
+layout: post
+title:  "奥斯汀游记：图灵斑图再探"
+---
+<!DOCTYPE html>
+<html>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<head>
+</head>
+<body>
+<p>在<a href={% post_url 2015-7-22-houston-zoo %}>上篇文章</a>
+里我提到了图灵斑图理论，当时的一个推论是在蛇这种身体长宽差别较大的动物身上，更可能呈现出纵向条纹。</p>
+<figure>
+    <img src="/assets/images/transverse_stripes.png" style="width: 400px">
+    <figcaption>纵条纹的蛇</figcaption>
+</figure>
+<p>我当时在动物园的观察样本不多，有些例外但还大致吻合，不过我并没有完全信服。上周末去奥斯汀玩，顺路去了一个爬行动物卖展（感谢Xiaonan和Yuhan的招待）。我又仔细观察了一下，发现那里的蛇大部分都是这样的：</p>
+<img src="/assets/images/snakes.jpeg">
+<img src="/assets/images/snakes_1.jpeg">
+<img src="/assets/images/snakes_2.jpeg">
+
+<p>这些蛇大部分显然都不是纵纹，而是横纹、斑点或单色，于是回来我就开始查资料。这问题的困难之处在于与发育有关，目前的胚胎学对一个复杂的个体是怎么从一个受精卵一点点分化发育来的了解还远远不够，所以大部分与发育有关的问题都还很难得到彻底理解。要解释体貌上的斑斑点点，显然需要解释不同部位的细胞是怎么产生不同响应的，不同的响应必然是由不同的化学环境导致的，所以归根结底是解释如何形成这种非均匀的化学分布，对此有这么几种常见模型。</p>
+
+<h2>梯度模型(gradient model)</h2>
+<p>这是最简单（因此也是最早的）模型。想象一串细胞，最左边细胞的源源不断的产生一种能使细胞分泌色素的化学物质，称作成形素(morphogen)，成形素慢慢地往右扩散，同时慢慢降解。这样我们就有了一个从左到右浓度递减的分布。假如细胞能做出此类响应：</p>
+<p>当成形素浓度 &lt 1，发育成脚；</p>
+<p>           ∈ [1, 2)，发育成躯干；  </p>
+<p>           ∈ [2, 3)，发育成脑袋。  </p>
+<p>这样就能解释细胞的分化了。这个模型的简单之处是只要一种成形素，只要单纯的扩散过程，复杂之处是细胞要有多重阈值来做出复杂的响应。</p>
+
+<h2>反应扩散模型
+(<a href="https://en.wikipedia.org/wiki/Reaction%E2%80%93diffusion_system">reaction–diffusion system</a>)</h2>
+<p>这就是上次提过的图灵斑图理论。数学上来讲就是这种形式的方程：</p>
+<img src="/assets/images/RD_eq.png" style="width: 400px">
+<p>有点物理基础的应该能看明白，左边是浓度的变化，右边第一项代表扩散，第二项代表反应。反应项的形式多种多样，但要具有图灵提出的性质(Turing instability)则需要满足一些数学上的<a href="http://www.theshapeofmath.com/princeton/dynsys/turinginst2">要求</a>。这个方程一般得有两个，描述两种成形素，一种会激发色素的分泌(activator)，另一种则会遏制它(inhibitor)。图灵的功劳就在于他首先论证了这样简单的方程却可能导致非常复杂丰富的解图形。这样与梯度模型相比，图灵斑图理论就不要求细胞具有多重阈值响应，体貌的复杂由成形素的复杂分布承担了，而不论是扩散还是反应都是很常见的过程，所以这个模型显得更真实且富有美感。不过美的理论未必是对的，已经发现果蝇的形态发育是以梯度模型的方式<a href="https://en.wikipedia.org/wiki/Drosophila_embryogenesis#Gap_genes">发生</a>的。</p>
+
+<h2>趋化性模型(chemotaxis model)</h2>
+<p>上面两种模型都有一个不真实的地方，就是细胞是不动的，成形素分布好了细胞在原地负责分泌色素就好。但我们知道现实中细胞是会在化学刺激下移动的，把这点考虑进来我们就得到了趋化性模型，此时我们就需要多一个描述细胞密度n如何变化的方程了。</p>
+<img src="/assets/images/chemotaxis.png">
+<p>你还可以进一步考虑对流、机械力…… u got it。</p>
+<p>总的来说这些模型都还没太多实验数据支持，对于大多数动物，我们完全不知道它们的成形素到底是什么。因此只能从方程模拟些图案去跟自然界里的对比一下，如果对的上就觉得哎呦不错哦。图灵的模型在模拟猫科动物上表现不错，但对蛇类似乎不够好，不过此类研究也很少，专门针对蛇类的模拟最近的两篇文章都是1991年的了(<a href="http://www.sciencedirect.com/science/article/pii/S0022519305803108">1</a>，
+<a href="https://people.maths.ox.ac.uk/maini/PKM%20publications/17.pdf">2</a>)，都是一个组做的，用的都是趋化性模型，按他们的说法结果还不错（当然发出来的文章我就没见有说结果不好的）。</p>
+<p>顺便提一下上篇文章里的另一个推论:“身体条纹尾巴斑点是很少见的”，该怎么直观理解。</p>
+<figure>
+    <img src="/assets/images/Turing_pattern.gif">
+    <figcaption>同样的一块色素，在身体上体现为斑点，在尾部可能就足以绕一圈变成条纹了。反过来说如果都足以在身体部分绕一圈形成条纹，那在尾部就不会是斑点。注意这只是个直觉上的论证，数学上并没有各个色素块要一样大的要求，不过从经验来看一般是差不多。<a href="http://www.theshapeofmath.com/princeton/dynsys/turinginst3">图片来源</a></figcaption>
+</figure>
+<p>但这个问题只从数学角度研究是远远不够的，毕竟体色具有重要的适应性，我们还是得从进化的角度来理解才能得到最终的解释，如杜布赞斯基所说:“<a href="https://en.wikipedia.org/wiki/Nothing_in_Biology_Makes_Sense_Except_in_the_Light_of_Evolution">Nothing in biology makes sense except in the light of evolution.</a>”
+《<a href="http://pcleon.if.ufrgs.br/pub/listas-sistdin/MurrayII.pdf">Mathematical Biology II</a>》4.13节提到纵纹多出现在有毒的海蛇身上，这与我在卖展上看到的海报也一致。</p>
+<figure>
+    <img src="/assets/images/snake_poster.jpeg" style="width: 1000px">
+    <figcaption>展会上卖的一张美洲常见蛇分类图，可惜没拍全，回来网上也没找到，不过可以看到左边那一类蛇大多具有纵纹，我印象中那些是毒蛇。</figcaption>
+</figure>
+<p>从上图可以看出分类后的蛇往往具有类似的体貌，这也正是进化论所预期的。但具体的某种特征有什么适应意义呢？这种层面的解释当然少不了些just-so stories，但有些还挺有趣的，聊备一说，大家别当做定论就是了。</p>
+<p>有<a href="http://beheco.oxfordjournals.org/content/24/5/1237.full">研究</a>发现单色和横条纹（即条纹与身体平行）的蛇更少侵略性，遇到危险更倾向于逃跑。解释是因为这种体貌具有对体轴的平移不变性，所以假如蛇的身体被遮住只能看到一部分的话，这种体色可以让捕食者搞不清蛇到底有没有在动，因为颜色看着都没变。</p>
+<p>纵纹的蛇就更吊了，它们静止的时候显得一节一节的，可以吓唬人，而逃跑的时候如果足够快则会超过肉眼的刷新率，看起来变成单色的（类似于快速旋转的<a href="http://activity.ntsec.gov.tw/activity/race-1/44/D/030104.pdf">有色陀螺</a>），从而也具有了上面的优势。这说法乍看真的有点离奇，不过居然是有事实基础的。</p>
+<img src="/assets/images/spinning_top.png">
+<figure>
+    <img src="/assets/images/moving_snake.png" style="width: 900px">
+    <figcaption>右边是静止的蛇，左边是快速移动中的，在1/30秒的曝光中，看起来已经是单色的了。而一秒24帧在人眼看来就已经是连续的了。<a href="https://www.jstor.org/stable/1443481?seq=1#page_scan_tab_contents">图片来源</a></figcaption>
+</figure>
+
+<p>讲了这么多，所以我在展会上看到的蛇很少纵纹是因为：</p>
+<p>1. 蛇的图样发育未必是以图灵模型所描述的方式形成的；</p>
+<p>2. 即使是，该模型也并未禁止其他类型的图样，虽然形成其他图形的参数空间较小，但进化并不是一个随机过程；</p>
+<p>3. 其实有很多的蛇是纵纹的，但它们大多是有毒的海蛇，而我去的是个爬宠卖展，那里卖的自然大部分是陆生无毒蛇，谁会搞个水生毒蛇当宠物啊。</p>
+<p>最后发些照片。</p>
+<figure>
+    <img src="/assets/images/python_is_awesome.png" style="width: 900px">
+    <figcaption>我与Python</figcaption>
+</figure>
+<figure>
+    <img src="/assets/images/python_and_me.jpeg" style="width: 900px">
+    <figcaption>我与python</figcaption>
+</figure>
+</body>
+</html>
