@@ -6,6 +6,9 @@ title:  "奥斯汀游记：图灵斑图再探"
 <html>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <head>
+<script type="text/javascript"
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
 </head>
 <body>
 <p>在<a href={% post_url 2015-7-22-houston-zoo %}>上篇文章</a>
@@ -24,21 +27,28 @@ title:  "奥斯汀游记：图灵斑图再探"
 <h2>梯度模型(gradient model)</h2>
 <p>这是最简单（因此也是最早的）模型。想象一串细胞，最左边细胞的源源不断的产生一种能使细胞分泌色素的化学物质，称作成形素(morphogen)，成形素慢慢地往右扩散，同时慢慢降解。这样我们就有了一个从左到右浓度递减的分布。假如细胞能做出此类响应：</p>
 <p>当成形素浓度 &lt 1，发育成脚；</p>
-<p>           ∈ [1, 2)，发育成躯干；  </p>
-<p>           ∈ [2, 3)，发育成脑袋。  </p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;∈ [1, 2)，发育成躯干；  </p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;∈ [2, 3)，发育成脑袋。  </p>
 <p>这样就能解释细胞的分化了。这个模型的简单之处是只要一种成形素，只要单纯的扩散过程，复杂之处是细胞要有多重阈值来做出复杂的响应。</p>
 
 <h2>反应扩散模型
 (<a href="https://en.wikipedia.org/wiki/Reaction%E2%80%93diffusion_system">reaction–diffusion system</a>)</h2>
 <p>这就是上次提过的图灵斑图理论。数学上来讲就是这种形式的方程：</p>
-<img src="/assets/images/RD_eq.png" style="width: 400px">
+$$ \frac{\partial u}{\partial t} = \underbrace{D_u \frac{\partial^2 u}{\partial^2 x}}_{Diffusion} + \overbrace{f(u)}^{Reaction} $$
 <p>有点物理基础的应该能看明白，左边是浓度的变化，右边第一项代表扩散，第二项代表反应。反应项的形式多种多样，但要具有图灵提出的性质(Turing instability)则需要满足一些数学上的<a href="http://www.theshapeofmath.com/princeton/dynsys/turinginst2">要求</a>。这个方程一般得有两个，描述两种成形素，一种会激发色素的分泌(activator)，另一种则会遏制它(inhibitor)。图灵的功劳就在于他首先论证了这样简单的方程却可能导致非常复杂丰富的解图形。这样与梯度模型相比，图灵斑图理论就不要求细胞具有多重阈值响应，体貌的复杂由成形素的复杂分布承担了，而不论是扩散还是反应都是很常见的过程，所以这个模型显得更真实且富有美感。不过美的理论未必是对的，已经发现果蝇的形态发育是以梯度模型的方式<a href="https://en.wikipedia.org/wiki/Drosophila_embryogenesis#Gap_genes">发生</a>的。</p>
 
 <h2>趋化性模型(chemotaxis model)</h2>
 <p>上面两种模型都有一个不真实的地方，就是细胞是不动的，成形素分布好了细胞在原地负责分泌色素就好。但我们知道现实中细胞是会在化学刺激下移动的，把这点考虑进来我们就得到了趋化性模型，此时我们就需要多一个描述细胞密度n如何变化的方程了。</p>
-<img src="/assets/images/chemotaxis.png">
+
+$$\begin{equation}\begin{split}
+rate \ of \ change \ of \ cell \ density&=diffusion &- chemotaxis + cell mitosis\\
+ \partial n / \partial t &= D_n \nabla^2 n &- \alpha \nabla \centerdot (n\nabla c) + rn(N - n)\\
+ rate \ of \ change \ of \ chemoattractant &= diffusion &+ chemoattractant \ production - degradation \\
+ \partial c / \partial t &= D_c \nabla^2 c &+ \frac{Sn}{\beta + n} - \gamma c
+ \end{split}\end{equation}$$
+
 <p>你还可以进一步考虑对流、机械力…… u got it。</p>
-<p>总的来说这些模型都还没太多实验数据支持，对于大多数动物，我们完全不知道它们的成形素到底是什么。因此只能从方程模拟些图案去跟自然界里的对比一下，如果对的上就觉得哎呦不错哦。图灵的模型在模拟猫科动物上表现不错，但对蛇类似乎不够好，不过此类研究也很少，专门针对蛇类的模拟最近的两篇文章都是1991年的了(<a href="http://www.sciencedirect.com/science/article/pii/S0022519305803108">1</a>，
+<p>总的来说这些模型都还没太多实验数据支持，对于大多数动物，我们完全不知道它们的成形素到底是什么。因此只能从方程模拟些图案去跟自然界里的对比一下，如果对的上就觉得哎呦不错哦。图灵的模型在模拟猫科动物上表现不错，但对蛇类似乎不够好，不过此类研究也很少，专门针对蛇类的模拟最近的两篇文章都是1991年的了(<a href="http://www.sciencedirect.com/science/article/pii/S0022519305803108">1</a>,
 <a href="https://people.maths.ox.ac.uk/maini/PKM%20publications/17.pdf">2</a>)，都是一个组做的，用的都是趋化性模型，按他们的说法结果还不错（当然发出来的文章我就没见有说结果不好的）。</p>
 <p>顺便提一下上篇文章里的另一个推论:“身体条纹尾巴斑点是很少见的”，该怎么直观理解。</p>
 <figure>
@@ -66,11 +76,11 @@ title:  "奥斯汀游记：图灵斑图再探"
 <p>3. 其实有很多的蛇是纵纹的，但它们大多是有毒的海蛇，而我去的是个爬宠卖展，那里卖的自然大部分是陆生无毒蛇，谁会搞个水生毒蛇当宠物啊。</p>
 <p>最后发些照片。</p>
 <figure>
-    <img src="/assets/images/python_is_awesome.png" style="width: 900px">
+    <img src="/assets/images/python_is_awesome.png">
     <figcaption>我与Python</figcaption>
 </figure>
 <figure>
-    <img src="/assets/images/python_and_me.jpeg" style="width: 900px">
+    <img src="/assets/images/python_and_me.jpeg" >
     <figcaption>我与python</figcaption>
 </figure>
 </body>
