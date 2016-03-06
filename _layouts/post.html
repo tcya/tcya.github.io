@@ -13,3 +13,15 @@ layout: default
   </article>
 
 </div>
+<div class="post-recent">
+  {% if page.previous %}
+    <p>上一篇 <a href="{{ page.previous.url | prepend: site.baseurl }}">{{ page.previous.title }}</a></p>
+  {% else %}
+    <p>上一篇 恭喜你来到了世界尽头(<ゝω·)☆~</p>
+  {% endif %}
+  {% if page.next %}
+    <p>下一篇 <a href="{{ page.next.url | prepend: site.baseurl }}">{{ page.next.title }}</a></p>
+  {% else %}
+    <p>下一篇 下面没有了╮(╯_╰)╭</p>
+  {% endif %}
+</div>
