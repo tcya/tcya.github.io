@@ -220,8 +220,8 @@ function MakeGraph(id, right_weight) {
         ;
 
         balls = [];
-        balls.push(new Ball(svg, 200, 100, 0, 'n1', 'red', Math.PI, weight0));
-        balls.push(new Ball(svg, 400, 100, 1, 'n2', 'blue', Math.PI, right_weight * weight0));
+        balls.push(new Ball(svg, 120, 100, 0, 'n1', 'red', Math.PI, weight0));
+        balls.push(new Ball(svg, width - r0 * (1 + Math.log10(right_weight) / 2) - 10, 100, 1, 'n2', 'blue', Math.PI, right_weight * weight0));
         // balls.push(new Ball(svg, 201, 201, 'n3', 'yellow', Math.PI / 9, 90));
         // balls.push(new Ball(svg, 91, 31, 'n4', 'orange', Math.PI / 2, 15));
         // balls.push(new Ball(svg, 201, 21, 'n5', 'pink', Math.PI + Math.PI / 4, 15));
@@ -253,8 +253,8 @@ function MakeGraph(id, right_weight) {
                     }
                 if (balls[1].posX > width + balls[1].radius)
                     if (balls[0].posX > width + balls[0].radius || balls[0].vx <= balls[1].vx){
-                        balls[0].posX = 200;
-                        balls[1].posX = 400;
+                        balls[0].posX = 120;
+                        balls[1].posX = width - r0 * (1 + Math.log10(right_weight) / 2) - 10;
                         balls[0].vx = 0;
                         balls[1].vx = -1;
                         coll_cnt = 0;
@@ -324,22 +324,22 @@ function MakeGraph(id, right_weight) {
 <p>今天是π节，我介绍个非常有趣的计算圆周率的方法。中文互联网上似乎还没人提过。</p>
 <p>机理非常的简单，如下图的两个球，最左边是墙，假设无摩擦、一切碰撞都是弹性的。</p>
 <div style="height:200px; border:1px solid gray">
-<svg style="width:100%; height:100%;">
-  <circle cx="200" cy="100" r="30" fill="red" />
-  <circle cx="400" cy="100" r="30" fill="blue" />
+<svg style="height:100%;">
+  <circle cx="100" cy="100" r="30" fill="red" />
+  <circle cx="200" cy="100" r="30" fill="blue" />
 </svg><
 </div>
 
 <p>当右边的球向左运动时，球和球、球和墙之间就会各种啪啪啪。我们来数数，如果两球质量相等，整个系统会发生几次碰撞。</p>
 <!-- <img src="/assets/images/1mass.gif"> -->
 <div >
-    <div style="width:100%; height:100%;  ">
+    <div style="height:100%;  ">
         <div >
             <!-- <a id="startStop" href="javascript:StartStopGame()">Start</a> -->
             <!-- <p></p> -->
             <h2 id='weight1'>红球质量：1, 蓝球质量：1, 碰撞次数：0</h2>
         </div>
-        <div id="drawArea1" style="width:100%; border:1px solid gray">
+        <div id="drawArea1" style="border:1px solid gray">
         </div>
     </div>
 </div>
@@ -347,13 +347,13 @@ function MakeGraph(id, right_weight) {
 <p>很显然，3次。好像没什么特别的。那如果蓝球的质量是红球的100倍呢？</p>
 <!-- <img src="/assets/images/100mass.gif"> -->
 <div >
-    <div style="width:100%; height:100%;  ">
+    <div style="height:100%;  ">
         <div>
             <!-- <a id="startStop" href="javascript:StartStopGame()">Start</a> -->
             <!-- <p></p> -->
             <h2 id='weight100'>红球质量：1, 蓝球质量：100, 碰撞次数：0</h2>
         </div>
-        <div id="drawArea2" style="width:100%; border:1px solid gray">
+        <div id="drawArea2" style="border:1px solid gray">
         </div>
     </div>
 </div>
