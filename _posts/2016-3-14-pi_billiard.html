@@ -6,20 +6,366 @@ title:  "用台球算圆周率"
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<script type="text/javascript"
-  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+<script src="http://d3js.org/d3.v3.min.js"></script>
+<script>
+function MakeGraph(id, right_weight) {
+    var weight0 = 10; // Weight of the leftest ball
+    var r0 = 30; // Radius of the leftest ball
+    var coll_cnt = 0; // The number of collisions
+
+    // Ball object - multiple balls can be created by instantiating new objects
+    function Ball(svg, x, y, v, id, color, aoa, weight) {
+        this.posX = x; // cx
+        this.posY = y; // cy
+        this.color = color;
+        this.radius = weight; // radius and weight same
+        this.jumpSize = v; // speed
+        this.svg = svg; // parent SVG
+        this.id = id; // id of ball
+        this.aoa = aoa; // initial angle of attack
+        this.weight = weight;
+
+        if (!this.aoa)
+            this.aoa = Math.PI / 7;
+        if (!this.weight)
+            this.weight = 10;
+        this.radius = r0 * (1 + Math.log10(this.weight / weight0) / 2);
+
+        this.data = [this.id]; // allow us to use d3.enter()
+
+        var thisobj = this; // i like to use thisobj instead of this. this many times not reliable particularly handling evnet
+
+        // **** aoa is used only here -- earlier I was using to next move position.
+        // Now aoa and speed together is velocity
+        this.vx = Math.cos(thisobj.aoa) * thisobj.jumpSize; // velocity x
+        this.vy = Math.sin(thisobj.aoa) * thisobj.jumpSize; // velocity y
+        this.initialVx = this.vx;
+        this.initialVy = this.vy;
+        this.initialPosX = this.posX;
+        this.initialPosY = this.posY;
+
+        // when speed changes, go to initial setting
+        this.GoToInitialSettings = function (newjumpSize) {
+            thisobj.posX = thisobj.initialPosX;
+            thisobj.posY = thisobj.initialPosY;
+            thisobj.vx = Math.cos(thisobj.aoa) * newjumpSize; // velocity x
+            thisobj.vy = Math.sin(thisobj.aoa) * newjumpSize; // velocity y
+            thisobj.Draw();
+        }
+
+        this.Draw = function () {
+            var svg = thisobj.svg;
+            var ball = svg.selectAll('#' + thisobj.id)
+                        .data(thisobj.data)
+                    ;
+            ball.enter()
+                .append("circle")
+                .attr({"id" : thisobj.id, 'class' : 'ball', 'r' : thisobj.radius, 'weight' : thisobj.weight})
+                .style("fill", thisobj.color)
+                ;
+            ball
+                //.transition()//.duration(50)
+                .attr("cx", thisobj.posX)
+                .attr("cy", thisobj.posY)
+            ;
+            // intersect ball is used to show collision effect - every ball has it's own intersect ball
+            var intersectBall = ball.enter()
+                                .append('circle')
+                                .attr({ 'id': thisobj.id + '_intersect', 'class': 'intersectBall' });
+        }
+
+        this.Move = function () {
+            var svg = thisobj.svg;
+
+            //thisobj.posX += Math.cos(thisobj.aoa) * thisobj.jumpSize;
+            //thisobj.posY += Math.sin(thisobj.aoa) * thisobj.jumpSize;
+
+            thisobj.posX += thisobj.vx;
+            thisobj.posY += thisobj.vy;
+
+            // if (parseInt(svg.attr('width')) <= (thisobj.posX + thisobj.radius)) {
+            //     thisobj.posX = parseInt(svg.attr('width')) - thisobj.radius - 1;
+            //     thisobj.aoa = Math.PI - thisobj.aoa;
+            //     thisobj.vx = -thisobj.vx;
+            // }
+
+            if ( thisobj.posX < thisobj.radius) {
+                thisobj.posX = thisobj.radius+1;
+                thisobj.aoa = Math.PI - thisobj.aoa;
+                thisobj.vx = -thisobj.vx;
+                coll_cnt += 1;
+            }
+
+            if ( thisobj.id == 'n2' && thisobj.posX < thisobj.radius + 2 * balls[0].radius) {
+                thisobj.posX = thisobj.posX + 1;
+                thisobj.aoa = Math.PI - thisobj.aoa;
+                thisobj.vx = -thisobj.vx;
+                coll_cnt += 1;
+            }
+
+            if (parseInt(svg.attr('height')) < (thisobj.posY + thisobj.radius)) {
+                thisobj.posY = parseInt(svg.attr('height')) - thisobj.radius - 1;
+                thisobj.aoa = 2 * Math.PI - thisobj.aoa;
+                thisobj.vy = -thisobj.vy;
+            }
+
+            if (thisobj.posY < thisobj.radius) {
+                thisobj.posY = thisobj.radius+1;
+                thisobj.aoa = 2 * Math.PI - thisobj.aoa;
+                thisobj.vy = -thisobj.vy;
+            }
+
+            // **** NOT USING AOA except during initilization. Just left this for future reference *****
+            if (thisobj.aoa > 2 * Math.PI)
+                thisobj.aoa = thisobj.aoa - 2 * Math.PI;
+            if (thisobj.aoa < 0)
+                thisobj.aoa = 2 * Math.PI + thisobj.aoa;
+
+            thisobj.Draw();
+        }
+    }
+
+    function CheckCollision(ball1, ball2) {
+        var absx = Math.abs(parseFloat(ball2.posX) - parseFloat(ball1.posX));
+        var absy = Math.abs(parseFloat(ball2.posY) - parseFloat(ball1.posY));
+
+        // find distance between two balls.
+        var distance = (absx * absx) + (absy * absy);
+        distance = Math.sqrt(distance);
+        // check if distance is less than sum of two radius - if yes, collision
+        if (distance < (parseFloat(ball1.radius) + parseFloat(ball2.radius))) {
+            return true;
+        }
+        return false;
+    }
+
+    var balls = []; // global array representing balls
+    var color = d3.scale.category20();
+
+    //courtsey thanks to several internet sites for formulas
+    //detect collision, find intersecting point and set new speed+direction for each ball based on weight (weight=radius)
+    function ProcessCollision(ball1, ball2) {
+
+        if (ball2 <= ball1)
+            return;
+        if (ball1 >= (balls.length-1) || ball2 >= balls.length )
+            return;
+
+        ball1 = balls[ball1];
+        ball2 = balls[ball2];
+
+        if ( CheckCollision(ball1, ball2) ) {
+            coll_cnt = coll_cnt + 1;
+            // intersection point
+            var interx = ((ball1.posX * ball2.radius) + ball2.posX * ball1.radius)
+            / (ball1.radius + ball2.radius);
+            var intery = ((ball1.posY * ball2.radius) + ball2.posY  * ball1.radius)
+            / (ball1.radius + ball2.radius);
+
+            // show collision effect for 500 miliseconds
+            var intersectBall = svg.select('#' + ball1.id + '_intersect');
+            intersectBall.attr({ 'cx': interx, 'cy': intery, 'r': 5 ,'fill': 'black' })
+                        .transition()
+                        .duration(500)
+                        .attr('r', 0);
+
+            // calculate new velocity of each ball.
+            var vx1 = (ball1.vx * (ball1.weight - ball2.weight)
+                + (2 * ball2.weight * ball2.vx )) / (ball1.weight + ball2.weight);
+            var vy1 = (ball1.vy * (ball1.weight - ball2.weight)
+                + (2 * ball2.weight * ball2.vy)) / (ball1.weight + ball2.weight);
+            var vx2 = (ball2.vx * (ball2.weight - ball1.weight)
+                + (2 * ball1.weight * ball1.vx)) / (ball1.weight + ball2.weight);
+            var vy2 = (ball2.vy * (ball2.weight - ball1.weight)
+                + (2 * ball1.weight * ball1.vy)) / (ball1.weight + ball2.weight);
+
+            //set velocities for both balls
+            ball1.vx = vx1;
+            ball1.vy = vy1;
+            ball2.vx = vx2;
+            ball2.vy = vy2;
+
+            //ensure one ball is not inside others. distant apart till not colliding
+            while (CheckCollision(ball1, ball2)) {
+                ball1.posX += ball1.vx;
+                ball1.posY += ball1.vy;
+
+                ball2.posX += ball2.vx;
+                ball2.posY += ball2.vy;
+            }
+            ball1.Draw();
+            ball2.Draw();
+        }
+    }
+
+    function Initialize(containerId) {
+        // var height = document.getElementById(containerId).clientHeight;
+        var height = 200;
+        var width = document.getElementsByClassName('post')[0].offsetWidth;
+        gContainerId = containerId;
+        gCanvasId = containerId + '_canvas';
+        gTopGroupId = containerId + '_topGroup';
+        var svg = d3.select("#" + containerId).append("svg")
+            .attr("id", gCanvasId)
+            .attr("width", width)
+            .attr("height", height)
+            .append("g")
+            .attr("id", gTopGroupId)
+            .attr("x", 0)
+            .attr("y", 0)
+            .attr("width", width)
+            .attr("height", height)
+            .style("fill", "none")
+        //.attr("transform", "translate(" + 1 + "," + 1 + ")")
+        ;
+
+        balls = [];
+        balls.push(new Ball(svg, 200, 100, 0, 'n1', 'red', Math.PI, weight0));
+        balls.push(new Ball(svg, 400, 100, 1, 'n2', 'blue', Math.PI, right_weight * weight0));
+        // balls.push(new Ball(svg, 201, 201, 'n3', 'yellow', Math.PI / 9, 90));
+        // balls.push(new Ball(svg, 91, 31, 'n4', 'orange', Math.PI / 2, 15));
+        // balls.push(new Ball(svg, 201, 21, 'n5', 'pink', Math.PI + Math.PI / 4, 15));
+        // balls.push(new Ball(svg, 401, 41, 'n6', 'blue', Math.PI + Math.PI / 7, 25));
+
+        for (var i = 0; i < balls.length; ++i) {
+            balls[i].Draw();
+        }
+        return svg;
+    }
+
+    var startStopFlag = null;
+    function StartStopGame(id) {
+        var width = document.getElementsByClassName('post')[0].offsetWidth;
+        // if (startStopFlag == 2) {
+        //     d3.select("svg").remove();
+        //     svg = Initialize('drawArea1');
+        //     coll_cnt = 0;
+        //     document.getElementById('collision_cnt').innerHTML = '红球质量：1, 蓝球质量：' + right_weight + ', 碰撞次数：' + coll_cnt;
+        // }
+
+        if (startStopFlag == null) {
+            d3.timer(function () {
+                for (var i = 0; i < balls.length; ++i) {
+                    var r = balls[i].Move();
+                    for (var j = i + 1; j < balls.length; ++j) {
+                        ProcessCollision(i, j);
+                        d3.select('#weight'+right_weight).html('红球质量：1, 蓝球质量：' + right_weight + ', 碰撞次数：' + coll_cnt);
+                    }
+                if (balls[1].posX > width + balls[1].radius)
+                    if (balls[0].posX > width + balls[0].radius || balls[0].vx <= balls[1].vx){
+                        balls[0].posX = 200;
+                        balls[1].posX = 400;
+                        balls[0].vx = 0;
+                        balls[1].vx = -1;
+                        coll_cnt = 0;
+                        // setTimeout(function() {},1000);
+                        // document.getElementById('startStop').innerHTML = 'Restart';
+                    }
+                }
+
+
+                if (startStopFlag == null)
+                    return true;
+                else
+                    return false;
+            }, 1000);
+            startStopFlag = 1;
+            // document.getElementById('startStop').innerHTML = 'Stop';
+        }
+        else {
+            startStopFlag = null;
+            // document.getElementById('startStop').innerHTML = 'Start';
+        }
+    }
+    // I always like to handle ESC key
+    d3.select('body')
+            .on('keydown', function () {
+                if (balls.length == 0)
+                    return;
+                console.log(d3.event);
+                if (d3.event.keyCode == 27) { // if ESC key - toggle start stop
+                    StartStopGame();
+                }
+            });
+
+    function OnSpeedChange() {
+        var o = document.getElementById('speed');
+        if (startStopFlag != null)
+            startStopFlag = null; // by setting startStopFlag to null, callback of d3.timer will return true and animation will stop
+
+        setTimeout(function () { // go to initial position set new speed (ideally should not go to initial position)
+            for (var i = 0; i < balls.length; ++i) {
+                var o = document.getElementById('speed');
+                newjumpSize = o.options[o.selectedIndex].value;
+                balls[i].GoToInitialSettings(parseInt(newjumpSize));
+            }
+            setTimeout(function () {
+                StartStopGame();
+            }, 1000);
+        }, 500);
+    }
+    function OnNumberOfBallsChanged() {
+        var o = document.getElementById('numberOfBalls');
+        numberOfBalls = o.options[o.selectedIndex].value;
+        balls = balls.slice(0, 6);
+
+        d3.selectAll('.ball').remove();
+        //keep pushing as many balls you want..
+        for (var i = 6; i < numberOfBalls; ++i) {
+            balls.push(new Ball(svg, 101, 101, 'n'+(i+1).toString(), color(i), Math.PI / (i+1), (i%2)==0?10 : (10+i)));
+        }
+    }
+    var svg = Initialize(id);
+    StartStopGame(id);
+}
 </script>
 </head>
 <body>
 <p>今天是π节，我介绍个非常有趣的计算圆周率的方法。中文互联网上似乎还没人提过。</p>
 <p>机理非常的简单，如下图的两个球，最左边是墙，假设无摩擦、一切碰撞都是弹性的。</p>
-<img src="/assets/images/two_balls.png">
+<div style="height:200px; border:1px solid gray">
+<svg style="width:100%; height:100%;">
+  <circle cx="200" cy="100" r="30" fill="red" />
+  <circle cx="400" cy="100" r="30" fill="blue" />
+</svg><
+</div>
+
 <p>当右边的球向左运动时，球和球、球和墙之间就会各种啪啪啪。我们来数数，如果两球质量相等，整个系统会发生几次碰撞。</p>
-<img src="/assets/images/1mass.gif">
-<p>很显然，3次。好像没什么特别的。。</p>
-<p>那如果蓝球的质量是红球的100倍呢？</p>
-<img src="/assets/images/100mass.gif">
+<!-- <img src="/assets/images/1mass.gif"> -->
+<div >
+    <div style="width:100%; height:100%;  ">
+        <div >
+            <!-- <a id="startStop" href="javascript:StartStopGame()">Start</a> -->
+            <!-- <p></p> -->
+            <h2 id='weight1'>红球质量：1, 蓝球质量：1, 碰撞次数：0</h2>
+        </div>
+        <div id="drawArea1" style="width:100%; border:1px solid gray">
+        </div>
+    </div>
+</div>
+<p></p>
+<p>很显然，3次。好像没什么特别的。那如果蓝球的质量是红球的100倍呢？</p>
+<!-- <img src="/assets/images/100mass.gif"> -->
+<div >
+    <div style="width:100%; height:100%;  ">
+        <div>
+            <!-- <a id="startStop" href="javascript:StartStopGame()">Start</a> -->
+            <!-- <p></p> -->
+            <h2 id='weight100'>红球质量：1, 蓝球质量：100, 碰撞次数：0</h2>
+        </div>
+        <div id="drawArea2" style="width:100%; border:1px solid gray">
+        </div>
+    </div>
+</div>
+<p></p>
 <P>31次，看出什么来了吗？可能还没。但假如你足够有耐性，你可以验证当蓝球的质量是红球的10000倍时，总共会有314次碰撞；1000000时，3141次；10<sup>2n</sup>倍时，就可以得到π的小数点后n位。π就这样在一个跟圆怎么看都毫无关系的地方以这种不带小数点的奇葩方式出现了。不知道你怎么样，反正我第一次看到的时候是震惊之后半信半疑的。</P>
 <p>所以建议大家去读下<a href="http://www.turpion.org/php/full/getFT.phtml/rd_8_375.pdf?journal_id=rd&paper_id=252&agree=on&tpdfn=rd_8_375&x=41&y=8">原论文</a>，证明简单巧妙，<s>令人欲罢不能</s>。我保证聪明点的高中生都能基本读懂，不信你看作者自己说的，</p>
 <q>The author created the billiard method for finding π when he was preparing a mathematical colloquium talk at Eastern Illinois University about balls’ collisions (the so-called “Sinai’s Problem”). When the procedure was presented to the audience, no one believed it at first, but then the author gave a proof, the ease of which convinced everyone.</q>
+
+
+<script>
+    MakeGraph('drawArea1', 1);
+    MakeGraph('drawArea2', 100);
+    // StartStopGame();
+</script>
 </body>
