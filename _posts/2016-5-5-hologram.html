@@ -1,0 +1,48 @@
+---
+layout: post
+title:  "伪全息投影完全教程"
+---
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+</head>
+<body>
+<p><em>按：这事没有预想的有趣，不过也花了我些时间，简单记一下方便后人。</em></p>
+<figure>
+    <img src="/assets/images/hologram_heart.gif">
+</figure>
+<p>上面是我用ipad进行伪全息投影的效果图，相关教程网上搜“手机 全息”会有很多，但都有种种问题。我这个可能是最精确完备的，那些能轻易搜到的部分我就不细讲了。</p>
+<h1>物理原理</h1>
+<p>原理非常简单，但很不幸，百度经验上那些抄来抄去的文章全是错的。</p>
+<figure>
+    <img width="400px" src="/assets/images/wrong_hologram_mechanism.png">
+    <figcaption><a href="http://jingyan.baidu.com/article/a948d6514d4bb50a2dcd2e11.html"><font color='red'>错误的</font>原理</a></figcaption>
+</figure>
+<p>上图其实未必不对，但和我们做的没任何关系。我们要做的投影金字塔是不可能产生什么衍射的。它的成像其实就是靠镜面反射，金字塔的面充当着镜子的角色，让你在金字塔的中心处看到一个镜像，但用的材料又是透明的，所以这个虚像直接重叠在金字塔内部的实景上，就产生了全息的悬浮感。要验证这一点你把投影金字塔对着视频挪来挪去观察看看就知道了。如果我们再把同一个视频旋转并拼起来，使得从前后左右四个角度都能看到相同的像，就产生了360度无死角的错觉。</p>
+<figure>
+    <img width="500px"src="/assets/images/hologram_video_illustration.png">
+    <figcaption>用来进行伪全息投影的四面视频截图</figcaption>
+</figure>
+<h1>投影金字塔的制作</h1>
+<p>网上大部分教程用的是塑料CD盒，但理解了原理后我们知道任何有一定反光能力但依然透明的材料都是可以的，比如手机膜、廉价文件夹的塑料膜……它们裁剪起来比硬质CD盒容易，但代价是比较软，最终金字塔的面可能不平，成像就不够锐利，自己选择吧。具体制作就参考网上其他教程，不过你不需要直尺、量角器那些了，把下图调整到你想要的尺寸（底边比投影设备略大就挺好的），然后把材料贴在屏幕上描线裁割即可。</p>
+<figure>
+    <img width="400px" width="600px"src="/assets/images/hologram_pyramid.png">
+</figure>
+<h1>视频制作</h1>
+<p>大部分网上教程就到此为止了，剩下的你自己去网上找些四面视频（大部分画面都很简单）看看玩玩也就是了。教你拿任意视频做一个四面视频的教程就少多了。当然这也没什么难的，用高级一点的视频处理软件就可以做到，这篇<a href="http://news.17173.com/content/2012-07-02/20120702150627005_all.shtml">文章</a>的后半部分介绍了怎么用会声会影来实现（前半部分介绍了怎么得到同一个MMD的四个不同角度，这样投影出来四个方向看到的像是不一样的，你走到后面去看到的就会是miku的屁股。但这种方法只适用于从头制作的动画，大部分视频是不适用的）。会声会影是Windows平台的，在Mac上用iMovie的画中画功能也可以做。但这些方法有个小问题，四个视频是靠手动对齐的，很难拼的准，虽然这对投影效果不会有太大影响，但作为强迫症的我……再一个就是麻烦，得学软件。但这些都是技术细节上的困难，另一个问题更严重。</p>
+<figure>
+    <img src="/assets/images/oba_BG.gif">
+</figure>
+<p>如上图所示，假如我们直接把一段视频拿来全息投影的话，方方正正的背景强烈削弱了立体感，看起来好像只有投影而没有全息。对比网上的全息视频，你会发现要有全息感，得有个全黑的背景和突出的主体。所以为了达到更好的效果，我们需要通过抠像来把视频的背景去掉，只保留前景。这需要一些专业的视频处理软件，我用的是Adobe After Effects里的roto笔刷，教程网上也有，按部就班的倒也不难，就是累点，得一帧一帧的看，就当是考验你对欧巴的爱吧╮(╯_╰)╭</p>
+<figure>
+    <img src="/assets/images/oba_noBG.gif">
+    <figcaption>经过处理的欧巴。虽然因为格式塔心理学上的具体化（<a href="https://en.wikipedia.org/wiki/Gestalt_psychology#Reification">Reification</a>）现象，依然能感到边框的存在，但已经好多了</figcaption>
+</figure>
+<p>当你终于抠出自己满意的视频后，最后就是把它变成四面了。如果你的视频在手机里，那应用商店搜“hologram maker”应该就有现成的软件。如果需要在电脑上做，我写了个程序部署在<a href="http://tcya.pythonanywhere.com/">PythonAnywhere</a>上，你去那把视频上传并输入相应的参数就可以生成了。需要的参数有边长Length、中心分开的距离d和包围视频的一圈黑色padding的宽度，如果你的投影设备是要放在全息金字塔的下方，那把“Screen up”勾上。对于ipad，我觉得Length = 800，d = 150, padding = 10效果就不错，你在这附近试试。手机的话没怎么试，估计Length得小一半吧，欢迎反馈。文件大小我限制在了100M，应该够用了，没人会用这看2小时苍井空吧。。如果嫌不够想在自己电脑上用的话代码<a href="https://github.com/tcya/pseudo-hologram-video-maker/blob/master/app.py">在这</a>，基本上保留hologram函数里的那部分代码即可。</p>
+<figure>
+    <img src="/assets/images/layout.png">
+    <figcaption>输出视频的参数示意图</figcaption>
+</figure>
+<p>最后就是have fun吧\(≧▽≦)/。</p>
+</body>
