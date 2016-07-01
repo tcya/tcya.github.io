@@ -8,7 +8,7 @@ layout: default
 
   <ul class="post-list">
 
-    {% for post in paginator.posts %}
+    {% for post in site.posts %}
       <li class="post-list-item">
         <h2 class="post-list-title">
             <a class="hvr-underline-from-center" href="{{ site.url }}{{ post.url }}">{{ post.title }}</a>
@@ -23,7 +23,7 @@ layout: default
   </ul>
 
   <!-- Pagination links -->
-  <div class="pagination">
+<!--   <div class="pagination">
     {% if paginator.previous_page %}
       <div style="float:left" class="page-prev">
         <a href="{{ paginator.previous_page_path }}" class="previous">前一页</a>
@@ -35,7 +35,7 @@ layout: default
     </div>
     {% endif %}
   </div>
-
+ -->
   <!-- <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p> -->
 
 </div>
