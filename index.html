@@ -9,13 +9,6 @@ layout: default
   <ul class="post-list">
 
     {% for post in paginator.posts %}
-      <!-- <li>
-        <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
-
-        <h2>
-          <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
-        </h2>
-      </li> -->
       <li class="post-list-item">
         <h2 class="post-list-title">
             <a class="hvr-underline-from-center" href="{{ site.url }}{{ post.url }}">{{ post.title }}</a>
@@ -32,17 +25,17 @@ layout: default
   <!-- Pagination links -->
   <div class="pagination">
     {% if paginator.previous_page %}
-      <a href="{{ paginator.previous_page_path }}" class="previous">前一页</a>
-    {% else %}
-      <span class="previous"></span>
+      <div style="float:left" class="page-prev">
+        <a href="{{ paginator.previous_page_path }}" class="previous">前一页</a>
+      </div>
     {% endif %}
     {% if paginator.next_page %}
-      <a href="{{ paginator.next_page_path }}" class="next">后一页</a>
-    {% else %}
-      <span class="next "></span>
+    <div style="float:right" class="page-next">
+      <a text-align:right href="{{ paginator.next_page_path }}" class="next">后一页</a>
+    </div>
     {% endif %}
   </div>
 
-  <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p>
+  <!-- <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p> -->
 
 </div>
