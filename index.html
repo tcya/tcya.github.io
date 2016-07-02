@@ -5,18 +5,13 @@ layout: default
 
   <!-- <h1 class="page-heading">文章</h1> -->
   <div class="sidebar">
-      <div class="site-nav">
-        {% for page in site.pages %}
-          {% if page.title %}
-          <a class="page-link" href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a>
-          {% endif %}
-        {% endfor %}
+      <div class="about">
+        <a class="page-link" href="{{ "/about" | prepend: site.baseurl }}">关于</a>
       </div>
-      <div class="site-nav">
+      <div class="about">
         <a class="page-link" href="{{ "/feed.xml" | prepend: site.baseurl }}">RSS</a>
       </div>
-
-      <div class="sidebar-block site-nav">
+      <div class="sidebar-block">
         <h3>随机引用</h3>
         <p>Research is to see what everybody else has seen, and to think what nobody else has thought.</p>
         <p>-Albert Szent-Gyorgyi</p>
@@ -67,18 +62,18 @@ layout: default
     </ul>
 
   <!-- Pagination links -->
-  <div class="pagination">
-    {% if paginator.previous_page %}
-      <div style="float:left" class="page-prev">
-        <a href="{{ paginator.previous_page_path }}" class="previous">前一页</a>
+    <div class="pagination">
+      {% if paginator.previous_page %}
+        <div style="float:left" class="page-prev">
+          <a href="{{ paginator.previous_page_path }}" class="previous">前一页</a>
+        </div>
+      {% endif %}
+      {% if paginator.next_page %}
+      <div style="float:right" class="page-next">
+        <a text-align:right href="{{ paginator.next_page_path }}" class="next">后一页</a>
       </div>
-    {% endif %}
-    {% if paginator.next_page %}
-    <div style="float:right" class="page-next">
-      <a text-align:right href="{{ paginator.next_page_path }}" class="next">后一页</a>
+      {% endif %}
     </div>
-    {% endif %}
-  </div>
   <!-- <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p> -->
 
   </div>

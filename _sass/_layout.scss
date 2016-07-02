@@ -30,6 +30,21 @@
     width: 150px;
 }
 
+.about {
+    padding: 5px;
+    background: white;
+    .page-link {
+        font-size: 20px;
+        color: $text-color;
+        line-height: $base-line-height;
+
+        // Gaps between nav items, but not on the first one
+        &:not(:first-child) {
+            margin-left: 20px;
+        }
+    }
+}
+
 .site-nav {
     padding: 5px;
 
