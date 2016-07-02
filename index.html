@@ -4,24 +4,24 @@ layout: default
 
 <div class="home">
 
-  <h1 class="page-heading">Posts</h1>
+  <!-- <h1 class="page-heading">文章</h1> -->
+  <div class="col-md-8">
+    <ul class="post-list">
 
-  <ul class="post-list">
+      {% for post in site.posts %}
+        <li class="post-list-item">
+          <h2 class="post-list-title">
+              <a class="hvr-underline-from-center" href="{{ site.url }}{{ post.url }}">{{ post.title }}</a>
+          </h2>
+          <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
+  <!--         <p class="post-list-description">
+              {{ post.excerpt | strip_html | strip}} <a class="readmore" href="{{ site.url }}{{ post.url }}">阅读全文</a>
+          </p> -->
 
-    {% for post in site.posts %}
-      <li class="post-list-item">
-        <h2 class="post-list-title">
-            <a class="hvr-underline-from-center" href="{{ site.url }}{{ post.url }}">{{ post.title }}</a>
-        </h2>
-        <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
-<!--         <p class="post-list-description">
-            {{ post.excerpt | strip_html | strip}} <a class="readmore" href="{{ site.url }}{{ post.url }}">阅读全文</a>
-        </p> -->
-
-      </li>
-    {% endfor %}
-  </ul>
-
+        </li>
+      {% endfor %}
+    </ul>
+  </div>
   <!-- Pagination links -->
 <!--   <div class="pagination">
     {% if paginator.previous_page %}
