@@ -31,8 +31,7 @@
 }
 
 .site-nav {
-    float: right;
-    line-height: 56px;
+    padding: 5px;
 
     .menu-icon {
         display: none;
@@ -99,6 +98,17 @@
     padding-left: 15px;
     min-width: 200px;
     float: right;
+
+    .sidebar-block {
+        background: ghostwhite;
+        padding: 5px;
+        margin-bottom: 10px;
+        font-color: black;
+
+        h3 {
+            color: #333399;
+        }
+    }
 }
 
 /**

@@ -4,21 +4,45 @@ layout: default
 <div class="home wrapper">
 
   <!-- <h1 class="page-heading">文章</h1> -->
-    <div class="sidebar">
-    <p>word-break:break-all 例如div宽200px，它的内容就会到200px自动换行，如果该行末端有个英文单词很长（congratulation等），它会把单词截断，变成该行末端为conra(congratulation的前端部分)，下一行为tulation（conguatulation）的后端部分了。
+  <div class="sidebar">
+      <div class="site-nav">
+        {% for page in site.pages %}
+          {% if page.title %}
+          <a class="page-link" href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a>
+          {% endif %}
+        {% endfor %}
+      </div>
+      <div class="site-nav">
+        <a class="page-link" href="{{ "/feed.xml" | prepend: site.baseurl }}">RSS</a>
+      </div>
 
-2，word-wrap:break-word 例子与上面一样，但区别就是它会把congratulation整个单词看成一个整体，如果该行末端宽度不够显示整个单词，它会自动把整个单词放到下一行，而不会把单词截断掉的。
+      <div class="sidebar-block site-nav">
+        <h3>随机引用</h3>
+        <p>Research is to see what everybody else has seen, and to think what nobody else has thought.</p>
+        <p>-Albert Szent-Gyorgyi</p>
+      </div>
 
-3，word-break;break-all 支持版本：IE5以上 该行为与亚洲语言的 normal 相同。也允许非亚洲语言文本行的任意字内断开。该值适合包含一些非亚洲文本的亚洲文本。 WORD-WRAP:break-word 支持版本：IE5.5以上 内容将在边界内换行。如果需要，词内换行( word-break )也将发生。表格自动换行，避免撑开。 word-break : normal | break-all | keep-all 参数： normal : 　依照亚洲语言和非亚洲语言的文本规则，允许在字内换行 break-all : 　该行为与亚洲语言的normal相同。也允许非亚洲语言文本行的任意字内断开。该值适合包含一些非亚洲文本的亚洲文本 keep-all : 　与所有非亚洲语言的normal相同。对于中文，韩文，日文，不允许字断开。适合包含少量亚洲文本的非亚洲文本 语法： word-wrap : normal | break-word 参数： normal : 　允许内容顶开指定的容器边界 break-word : 　内容将在边界内换行。如果需要，词内换行（word-break）也行发生说明：设置或检索当当前行超过指定容器的边界时是否断开转行。
+      <div class="sidebar-block">
+        <h3>一些有趣的链接</h3>
+        <ul>
+        <li><a href="http://headsalon.org/">辉格博客</a></li>
+        <li><a href="http://weibo.com/whigzhou">辉格微博</a></li>
+        <li><a href="http://weibo.com/headsalon">海德沙龙微博</a></li>
+        <li><a href="http://www.changhai.org/">卢昌海</a></li>
+        <li><a href="http://www.jianshu.com/users/2f1c0190679d/latest_articles">塔塔酱</a></li>
+        <li><a href="http://www.kylen314.com/">比特之理</a></li>
+        <li><a href="http://marginalrevolution.com/">边际革命</a></li>
+        <li><a href="http://www.rationaloptimist.com/blog/">Matt Ridley</a></li>
+        <li><a href="http://cafehayek.com/">Cafe Hayek</a></li>
 
-对应的脚本特性为wordWrap。请参阅我编写的其他书目。 语法： table-layout : auto | fixed 参数： auto : 　默认的自动算法。布局将基于各单元格的内容。表格在每一单元格读取计算之后才会显示出来。速度很慢 fixed : 　固定布局的算法。在这算法中，水平布局是仅仅基于表格的宽度，表格边框的宽度，单元格间距，列的宽度，而和表格内容无关说明：设置或检索表格的布局算法。对应的脚本特性为tableLayout。
-
-建议：word-break 用3C检测会显示问题的，导致百度快照也会出问题-这个属性OPERA FIREFOX 浏览器也不支持 word-</p>
+        </ul>
+      </div>
   </div>
+
   <div class="left">
     <ul class="post-list">
 
-      {% for post in site.posts %}
+<!--       {% for post in site.posts %}
         <li class="post-list-item">
           <h2 class="post-list-title">
               <a class="hvr-underline-from-center" href="{{ site.url }}{{ post.url }}">{{ post.title }}</a>
@@ -27,13 +51,23 @@ layout: default
           <p class="post-list-description">
               {{ post.excerpt | strip}} <a class="readmore" href="{{ site.url }}{{ post.url }}">阅读全文</a>
           </p>
-
+        </li>
+      {% endfor %} -->
+      {% for post in paginator.posts %}
+        <li class="post-list-item">
+          <h2 class="post-list-title">
+              <a class="hvr-underline-from-center" href="{{ site.url }}{{ post.url }}">{{ post.title }}</a>
+          </h2>
+          <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
+          <p class="post-list-description">
+              {{ post.excerpt | strip}} <a class="readmore" href="{{ site.url }}{{ post.url }}">阅读全文</a>
+          </p>
         </li>
       {% endfor %}
     </ul>
 
   <!-- Pagination links -->
-<!--   <div class="pagination">
+  <div class="pagination">
     {% if paginator.previous_page %}
       <div style="float:left" class="page-prev">
         <a href="{{ paginator.previous_page_path }}" class="previous">前一页</a>
@@ -45,8 +79,7 @@ layout: default
     </div>
     {% endif %}
   </div>
- -->
   <!-- <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p> -->
 
-</div>
+  </div>
 </div>
