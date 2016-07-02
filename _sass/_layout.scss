@@ -109,10 +109,10 @@
 }
 
 .sidebar {
-    width: 270px;
+    width: 250px;
     padding-left: 15px;
-    min-width: 200px;
-    float: right;
+
+    float: left;
     overflow: hidden;
 
     .sidebar-block {
@@ -129,6 +129,9 @@
 
 .left {
     overflow: hidden;
+    float:left;
+    width: 60%;
+    min-width: 600px;
     border-right: 1px dashed lightgrey;
     padding-right: 10px;
 }
@@ -231,6 +234,7 @@
 .post-list-item {
     background: ghostwhite;
     padding: 10px;
+    overflow: hidden;
 }
 
 .post-meta {
