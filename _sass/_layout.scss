@@ -111,8 +111,7 @@
 .sidebar {
     width: 250px;
     padding-left: 15px;
-
-    float: left;
+    min-width: 200px;
     overflow: hidden;
 
     .sidebar-block {
@@ -131,9 +130,10 @@
     overflow: hidden;
     float:left;
     width: 60%;
-    min-width: 600px;
+    min-width: 240px;
     border-right: 1px dashed lightgrey;
     padding-right: 10px;
+    padding-left: 15px;
 }
 /**
  * Site footer
