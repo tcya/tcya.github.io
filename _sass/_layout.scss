@@ -94,7 +94,12 @@
     }
 }
 
-
+.sidebar {
+    width: 25%;
+    padding-left: 15px;
+    min-width: 200px;
+    float: right;
+}
 
 /**
  * Site footer
@@ -171,6 +176,8 @@
  */
 .page-content {
     padding: $spacing-unit 0;
+    margin-left: 20px;
+    margin-right: 20px;
 }
 
 .page-heading {
@@ -252,9 +259,23 @@
     }
 }
 
-@media (min-width: 992px) {
+/**
+ * Index page
+ */
+.home {
+    max-width:1200px;
+    overflow: hidden;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.left {
+    overflow: hidden;
+    border-right: 1px dashed lightgrey;
+    padding-right: 10px;
+}
+@media (min-width: 800px) {
   .col-md-1, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9, .col-md-10, .col-md-11, .col-md-12 {
-    float: left;
   }
   .col-md-12 {
     width: 100%;
@@ -272,7 +293,7 @@
     width: 66.66666667%;
   }
   .col-md-4 {
-    width: 33.33333333%;
+    width: 28%;
   }
 }
 
@@ -282,5 +303,4 @@
   padding-right: 15px;
   padding-left: 0px;
   margin-right: 15px;
-  border-right: 1px solid $grey-color-light;
 }
