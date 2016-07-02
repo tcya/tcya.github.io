@@ -25,6 +25,11 @@
     text-align: center;
 }
 
+#title-img {
+    margin: 5px;
+    width: 150px;
+}
+
 .site-nav {
     float: right;
     line-height: 56px;
@@ -188,6 +193,7 @@
 
 .post-list-item {
     background: ghostwhite;
+    padding: 10px;
 }
 
 .post-meta {
