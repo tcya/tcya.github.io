@@ -109,10 +109,11 @@
 }
 
 .sidebar {
-    width: 25%;
+    width: 270px;
     padding-left: 15px;
-    min-width: 80px;
+    min-width: 200px;
     float: right;
+    overflow: hidden;
 
     .sidebar-block {
         background: ghostwhite;
@@ -126,6 +127,11 @@
     }
 }
 
+.left {
+    overflow: hidden;
+    border-right: 1px dashed lightgrey;
+    padding-right: 10px;
+}
 /**
  * Site footer
  */
@@ -294,11 +300,6 @@
     margin-right: auto;
 }
 
-.left {
-    overflow: hidden;
-    border-right: 1px dashed lightgrey;
-    padding-right: 10px;
-}
 @media (min-width: 800px) {
   .col-md-1, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9, .col-md-10, .col-md-11, .col-md-12 {
   }
