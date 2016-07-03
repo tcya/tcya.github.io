@@ -38,12 +38,12 @@ layout: default
     <div class="pagination">
       {% if paginator.previous_page %}
         <div style="float:left" class="page-prev">
-          <a href="{{ paginator.previous_page_path }}" class="previous">前一页</a>
+          <a href="{{ paginator.previous_page_path }}" class="previous">前滚翻</a>
         </div>
       {% endif %}
       {% if paginator.next_page %}
       <div style="float:right" class="page-next">
-        <a text-align:right href="{{ paginator.next_page_path }}" class="next">后一页</a>
+        <a text-align:right href="{{ paginator.next_page_path }}" class="next">后滚翻</a>
       </div>
       {% endif %}
     </div>

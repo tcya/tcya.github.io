@@ -2,27 +2,35 @@
 layout: default
 ---
 <div class="wrapper">
-<div class="post">
+  <div class="post">
 
-  <headerclass="post-header">
-    <h1 class="post-title">{{ page.title }}</h1>
-    <p class="post-meta">{{ page.date | date: "%b %-d, %Y" }}{% if page.author %} • {{ page.author }}{% endif %}{% if page.meta %} • {{ page.meta }}{% endif %}</p>
-  </header>
-  <article class="post-content">
-    {{ content }}
-  </article>
+    <headerclass="post-header">
+      <h1 class="post-title">{{ page.title }}</h1>
+      <p class="post-meta">{{ page.date | date: "%b %-d, %Y" }}{% if page.author %} • {{ page.author }}{% endif %}{% if page.meta %} • {{ page.meta }}{% endif %}</p>
+    </header>
+    <article class="post-content">
+      {{ content }}
+    </article>
 
-<!-- </div> -->
-<div class="post-recent">
-  {% if page.previous %}
-    <p>上一篇 <a href="{{ page.previous.url | prepend: site.baseurl }}">{{ page.previous.title }}</a></p>
-  {% else %}
-    <p>上一篇 欢迎来到拉夫德鲁( ͡° ͜ʖ ͡°)</p>
-  {% endif %}
-  {% if page.next %}
-    <p>下一篇 <a href="{{ page.next.url | prepend: site.baseurl }}">{{ page.next.title }}</a></p>
-  {% else %}
-    <p>下一篇 下面没有了╮(╯_╰)╭</p>
-  {% endif %}
-</div>
+  </div>
+  <div class="post-recent">
+    {% if page.previous %}
+      <p>上一篇 <a href="{{ page.previous.url | prepend: site.baseurl }}">{{ page.previous.title }}</a></p>
+    {% else %}
+      <p>上一篇 欢迎来到拉夫德鲁( ͡° ͜ʖ ͡°)</p>
+    {% endif %}
+    {% if page.next %}
+      <p>下一篇 <a href="{{ page.next.url | prepend: site.baseurl }}">{{ page.next.title }}</a></p>
+    {% else %}
+      <p>下一篇 下面没有了╮(╯_╰)╭</p>
+    {% endif %}
+  </div>
+  <script>
+    var idcomments_acct = 'be9f3c99af2a24e17648d0f5918055bb';
+    var idcomments_post_id;
+    var idcomments_post_url;
+    </script>
+    <span id="IDCommentsPostTitle" style="display:none"></span>
+    <script type='text/javascript' src='http://www.intensedebate.com/js/genericCommentWrapperV2.js'>
+  </script>
 </div>
