@@ -1,6 +1,7 @@
 ---
 layout: default
 ---
+<meta name="viewport" content="width=device-width, initial-scale=1" />
 <div class="home wrapper">
 
   <!-- <h1 class="page-heading">文章</h1> -->
@@ -57,13 +58,13 @@ layout: default
         <a class="page-link" href="{{ "/feed.xml" | prepend: site.baseurl }}">RSS</a>
       </div>
       <div class="sidebar-block">
-        <h3>随机引用</h3>
-        <p>Research is to see what everybody else has seen, and to think what nobody else has thought.</p>
-        <p>-Albert Szent-Gyorgyi</p>
+        <h3>随机文摘</h3>
+        <p id="quote"></p>
+        <!-- <p id="source"></p> -->
       </div>
 
       <div class="sidebar-block">
-        <h3>一些有趣的链接</h3>
+        <h3>一些链接</h3>
         <ul>
         <li><a href="http://headsalon.org/">辉格博客</a></li>
         <li><a href="http://weibo.com/whigzhou">辉格微博</a></li>
@@ -72,6 +73,7 @@ layout: default
         <li><a href="http://www.jianshu.com/users/2f1c0190679d/latest_articles">塔塔酱</a></li>
         <li><a href="http://www.kylen314.com/">比特之理</a></li>
         <li><a href="http://marginalrevolution.com/">边际革命</a></li>
+        <li><a href="http://daviddfriedman.blogspot.com/">大卫·弗里德曼</a></li>
         <li><a href="http://www.rationaloptimist.com/blog/">Matt Ridley</a></li>
         <li><a href="http://cafehayek.com/">Cafe Hayek</a></li>
 
@@ -79,3 +81,55 @@ layout: default
       </div>
   </div>
 </div>
+
+
+<script type="text/javascript">
+var quotes = [
+'<p>但是，美国的确繁荣了，而且是迄今最繁荣的国家。繁荣必定伴随着梦想而来，而有梦想就会有落空，自由意味着向一切可能性开放，包括误判和头脑发热的可能。人的行为决策不可能仅仅基于过去发生的事，而必须同时基于对未来的预期，也必须考虑他人的想法和可能的行动，这就决定了期望的集体落空——或者说泡沫——是不可能避免的。除非压制增长的一切可能性，监管和调控从来没有消除泡沫和由此导致的经济波动，事实上，它们往往制造和加剧波动。</p>\
+<p>世人都羡慕美国的繁荣和富足，却很少关注美国人是如何创造繁荣的，他们反而厌恶使得这种繁荣成为可能的自由和开放。他们对着果子流口水，却对果树之根不屑一顾。</p>\
+<p>—《<a href="http://headsalon.org/archives/609.html">西进运动与地产泡沫</a>》，辉格',
+'<p>那些理解狒狒的人对形而上学的贡献会比洛克还要多。</p>\
+<p>He who understands baboon would do more towards metaphysics than Locke.</p>\
+<p>- 达尔文</p>\
+<p>I have thought for some time that Dawkins and Williams have made a more fruitful contribution to philosophy than most philosophers, and I am pleased to see this opinion so generously recognized.</p>\
+<p>- <<a href="http://www.nybooks.com/articles/1995/11/30/genes-memes-minds/">Genes, Memes, & Minds</a>>, John Maynard Smith',
+'<p><a href="https://zh.wikipedia.org/zh-cn/%E7%94%9F%E7%89%A9%E5%AD%B8%E7%9A%84%E4%B8%80%E5%88%87%E9%83%BD%E6%B2%92%E6%9C%89%E9%81%93%E7%90%86%EF%BC%8C%E9%99%A4%E9%9D%9E%E6%94%BE%E5%9C%A8%E6%BC%94%E5%8C%96%E7%9A%84%E5%85%89%E8%8A%92%E4%B9%8B%E4%B8%8B">Nothing in biology makes sense except in the light of evolution.</a></p>\
+<p>- Theodosius Dobzhansky</p>',
+'<p>许多观察者都不看好印度的前景，特别是拿它与其它金砖国家作对比时，当然，他们有许多的证据，拥挤、混乱、肮脏、懒惰、腐败、行政效率低下、基础设施差，任何改进和建设行动都无可避免的遭遇时常令人绝望的阻碍和拖延；但他们没有意识到的是，阻碍变革与建设的，常常是权利，尽管在现代化和国民经济等宏大词汇下面，这些权利常显得细微、琐碎、陈旧、腐朽，以至讨厌，但它们终究是权利，是权利就应得到尊重和保障，即使非要废除也应予以补偿。</p>\
+<p>西方的现代化所带来的巨大物质繁荣，常迷乱了人们的眼睛，以为现代化就是对物质繁荣的长期追求的结果，这导致后发国家为获得现代化成功不惜强力清除这一追求道路上所遭遇的一切障碍，毫不奇怪，这将包括大部分传统权利；某些案例中，这样的行动确能在短期内造就疾风暴雨似的工业化和城市化，但造就不出一个具备良好法治的现代国家，而离开了法律对权利与秩序的保障，一切繁华都可能是过眼云烟。</p>\
+<p>印度，或许仍将像一部老牛拉的破车那样缓慢蹒跚前行，但它的每一步都是坚实的，不易被颠覆和逆转，而它的百富榜上的人名，十年后也无须去监狱花名册上搜寻，它不仅值得被看好，也值得被羡慕。</p>\
+—《<a href="http://headsalon.org/archives/1016.html">从摊贩胜诉看印度法治</a>》，辉格',
+'<p>1896-1900年在[苏黎世]工业大学的师范系学习。我很快就发现，我能成为一个有中等成绩的学生也就该心满意足了。要做一个好学生，必须有能力去很勤快地理解所学习的东西；要心甘情愿地把精力完全集中于人们所教给你的那些东西上；要遵守秩序，把课堂上讲解的东西笔记下来，然后自觉地做好作业。遗憾的是，我发现这一切特性正是我最为欠缺的。于是我逐渐学会抱着某种负疚的心情自由自在地生活，安排自己去学习那些适合于我的求知欲和兴趣的东西。我以极大的兴趣去听某些课。但是我“刷掉了”很多课程，而以极大的热忱在家里向理论物理学的大师们学习。这样做是好的，并且显著地减轻了我的负疚心情，从而使我心境的平衡终于没有受到剧烈的扰乱。</p>\
+<p>—《自述片段》，《<a href="https://book.douban.com/subject/1865875/">爱因斯坦文集</a>》第一卷</p>\
+<p>Education is not the filling of a pail, but the lighting of a fire.<p>\
+<p>- 威廉·巴特勒·叶芝</p>',
+'<p>尽管还有少数边缘上的科学家担心种族和人类遗传上的退化，大多数科学家现在都认识到了个体的幸福应该比群体的幸福更有优先权。在基因筛选与优化人种论者在他们的巅峰期想要的东西之间，有着巨大的区别，这就在于：基因筛选是要让人以个人的身份用个人的要求来做出个人的选择。优化人种论则是要把这样的决定国有化，让人民不是为了自己而是为了国家来生育。在忙着规定”我们“在基因的新世界里应该允许什么不允许什么的时候，这是一个常常被忽略了的区别。”我们“是谁？是个体，还是有着集体利益的国家和种族？</p>\
+<p>比较一下现代仍然实行的”优化人种“的例子。在美国，就像我在地十三号染色体那一章里讲过的，犹太人遗传疾病防治委员会为学龄儿童验血，在将来，如果想结婚的双方都带有某一个特定的致病基因的一种形式，委员会就要劝阻。这是一个完全自愿的政策。尽管它被批判成是”优化人种“，但是它没有任何强制的措施。</p>\
+优化人种历史的很多现代版本都把它表达成是一个科学、尤其是遗传学、不受控制会有多么危险的例子，其实它更多地是一个政府不受控制会有多么危险的例子。</p>\
+<p>-《<a href="https://book.douban.com/subject/1062309/">基因组：人种自传23章</a>》，Matt Ridley</p>',
+"<p>If you would like to watch philosophers squirm — and who wouldn't? — pose this tough question: Suppose you may either a) solve a major philosophical problem so conclusively that there is nothing left to say (thanks to you, part of the field closes down forever, and you get a footnote in history); or b) write a book of such tantalizing perplexity and controversy that it stays on the required-reading list for centuries to come. Which would you choose? Many philosophers will reluctantly admit that they would go for option b). If they had to choose, they would rather be read than right. The Austrian philosopher Ludwig Wittgenstein tried brilliantly to go for a) and ended up with b). </p>\
+<p>- <<a href='http://www.stoa.org.uk/topics/wittgenstein/Daniel%20Dennett%20on%20Ludwig%20Wittgenstein.pdf'>Daniel Dennett on Ludwig Wittgenstein</a>></p>",
+"<p>It's unfortunate that Lawrence Summers and James Watson surrendered to pressure. However, it provides evidence that many currently accepted beliefs are maintained by bullying.</p>\
+<p>Malthus was right. It’s hard to see how the solar system could support much more than 10^28 people or the universe more than 10^50.</p>\
+<p>Writing a ‘future work’ section of a paper is like a dog pissing on the trees at the boundary of its territory.</p>\
+<p>We modern Marxists regard socialism as a historically brief transitional stage between feudalism and capitalism, necessary only in backward countries.</p>\
+<p>Inside of many liberals is a fascist struggling to get out.</p>\
+<p>- jmc's <a href='http://www-formal.stanford.edu/jmc/commentary.html'>commentaries</a> and <a href='http://www-formal.stanford.edu/jmc/sayings.html'>sayings</a></p>",
+'<p>就算99.9%的独立思考都是在制造垃圾，思想自由仍是可贵且不可或缺的，就算99.9%的创业项目都很白痴，自由市场仍是可贵且不可或缺的，就像99.9%的遗传变异都是中性或有害的，但随机变异和大规模并行计算仍是可贵且不可或缺的。</p>\
+<p>- <a href="http://weibo.com/u/1400461002?topnav=1&wvr=6&topsug=1&is_all=1&is_search=1&key_word=%E7%8B%AC%E7%AB%8B%E6%80%9D%E8%80%83%E9%83%BD%E6%98%AF%E5%9C%A8%E5%88%B6%E9%80%A0%E5%9E%83%E5%9C%BE#_0">辉格微博</a></p>',
+'<p>联邦制作为一种自下而上的组织结构，是不错的政体选择，它既保留了地方自治和制度竞争的空间，也享受了单一市场的好处；地方自治是自由的一大基石，地方性政权通常较少压制性，尤其是在它无法控制其边界时，正因为地方政府的强制和暴虐是容易逃离的，所以它们通常会变得比较温和，而人民用脚投票更会在它们之间造成制度竞争。</p>\
+<p>但是地方和小国政府也容易产生机会主义行为，特别是当商人和投资者已在当地投入大量无法搬走的资产之后；理想的情况是，在各地方之上有一个机构来压制这种机会主义，那就是联邦和它的宪法；所以，联邦制的精髓在于，通过提供一个宪法裁判和执行机构，来防止地方政府对其人民采取机会主义的剥夺和侵害行为，而同时，地方保有其充分的权力来对抗联邦本身成为一个剥夺和侵犯者的可能；简言之，好的联邦随宪法而成长，且只为宪法而存在。</p>\
+<p>- 《<a href="http://headsalon.org/archives/732.html">欧盟已不再是创造的发动机</a>》，辉格</p>'
+];
+// var para=document.createElement("p");
+// var node=document.createTextNode(Math.random());
+// para.appendChild(node);
+var i = Math.floor(Math.random() * quotes.length)
+var quote = quotes[9];
+document.getElementById("quote").innerHTML = quote;
+// document.getElementById("source").innerHTML = quote.source;
+// // var element=document.getElementById("div1");
+//   var x = document.getElementById("random-quote")
+// x.appendChild(para);
+//   document.write(Math.random())
+</script>
