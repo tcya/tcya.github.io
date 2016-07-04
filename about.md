@@ -4,11 +4,11 @@ title: 关于
 permalink: /about/
 ---
 
-## Hello World
+### Hello World
 
 这是我的个人博客，希望能通过它认识更多的朋友。我即将去Google工作，欢迎湾区的朋友联系我。
 
-## 联系信息
+### 联系信息
 
 * 邮箱 (<tcya24@gmail.com>)
 
@@ -18,7 +18,7 @@ permalink: /about/
 
 * [LinkedIn](https://www.linkedin.com/in/xunmoyang) <s>(我对目前的工作挺满意的，但如果有出任CEO的机会，还是欢迎联系我( ͡° ͜ʖ ͡°))</s>
 
-## 版权
+### 版权
 所有文章，除特别注明之外，都是我的原创，我对此保留全部权利，任何人在转载这些文章时须遵守下列规定：
 
 * 纸媒转载须征得作者同意
@@ -27,6 +27,6 @@ permalink: /about/
 
 * 任何转载网站在收到我的删除要求时，应予以执行
 
-## 嘛，总之
+### 嘛，总之
 
 ![](/assets/images/夜露死苦.png)
