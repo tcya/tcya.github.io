@@ -23,7 +23,7 @@ excerpt_separator: '<!-- excerpt break -->'
 analytics :
   provider : google
   google :
-      tracking_id : 'tracking_id'  # ex. UA-72165600-X
+      tracking_id : 'UA-80319756-1'  # ex. UA-72165600-X
 
 layout: default
 comments: true
