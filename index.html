@@ -2,24 +2,8 @@
 layout: default
 ---
 <div class="home wrapper">
-
-  <!-- <h1 class="page-heading">文章</h1> -->
-
-
   <div class="left">
     <ul class="post-list">
-
-<!--       {% for post in site.posts %}
-        <li class="post-list-item">
-          <h2 class="post-list-title">
-              <a class="hvr-underline-from-center" href="{{ site.url }}{{ post.url }}">{{ post.title }}</a>
-          </h2>
-          <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
-          <p class="post-list-description">
-              {{ post.excerpt | strip}} <a class="readmore" href="{{ site.url }}{{ post.url }}">阅读全文</a>
-          </p>
-        </li>
-      {% endfor %} -->
       {% for post in paginator.posts %}
         <li class="post-list-item">
           <h2 class="post-list-title">
@@ -36,7 +20,7 @@ layout: default
   <!-- Pagination links -->
     <div class="pagination">
       {% if paginator.previous_page %}
-        <div style="float:left" class="page-prev">
+        <div class="page-prev">
           <a href="{{ paginator.previous_page_path }}" class="previous">前滚翻</a>
         </div>
       {% endif %}
@@ -46,8 +30,6 @@ layout: default
       </div>
       {% endif %}
     </div>
-  <!-- <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p> -->
-
   </div>
     <div class="sidebar">
       <div class="about">
@@ -59,7 +41,6 @@ layout: default
       <div class="sidebar-block">
         <h3>随机文摘</h3>
         <p id="quote"></p>
-        <!-- <p id="source"></p> -->
       </div>
 
       <div id="recentcomments" class="dsq-widget sidebar-block">
@@ -74,12 +55,13 @@ layout: default
         <li><a href="http://weibo.com/whigzhou">辉格微博</a></li>
         <li><a href="http://weibo.com/headsalon">海德沙龙微博</a></li>
         <li><a href="http://www.changhai.org/">卢昌海</a></li>
-        <li><a href="http://www.jianshu.com/users/2f1c0190679d/latest_articles">塔塔酱</a></li>
+        <li><a href="http://www.wdk.pw/">王登科</a></li>
         <li><a href="http://www.kylen314.com/">比特之理</a></li>
         <li><a href="http://marginalrevolution.com/">边际革命</a></li>
         <li><a href="http://daviddfriedman.blogspot.com/">大卫·弗里德曼</a></li>
         <li><a href="http://www.rationaloptimist.com/blog/">Matt Ridley</a></li>
         <li><a href="http://cafehayek.com/">Cafe Hayek</a></li>
+        <li><a href="http://andrewgelman.com/">Andrew Gelman</a></li>
 
         </ul>
       </div>
