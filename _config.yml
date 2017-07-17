@@ -12,7 +12,7 @@ github_username:  tcya
 markdown: kramdown
 
 # Pagination
-gems: [jekyll-paginate]
+plugins: [jekyll-paginate]
 paginate: 10
 paginate_path: 'page:num'
 
@@ -27,3 +27,10 @@ analytics :
 
 layout: default
 comments: true
+
+scholar:
+  style: nature
+  ocale: en
+
+  source: assets/bib
+  bibliography: ref
