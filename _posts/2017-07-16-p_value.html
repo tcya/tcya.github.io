@@ -193,13 +193,15 @@ $$corr(X, Y) = \frac{cov(X, Y)}{\sigma_X \sigma_Y} = 0.072$$
 
 <h4><a href="https://en.wikipedia.org/wiki/Confusion_of_the_inverse">Confusion of the inverse</a></h4>
 
-<p>这个问题已经是<a href="http://www.guokr.com/article/438043/">老生常谈</a>了。p值的含义是在零假设成立的情况下观察到手上数据（或比手上数据更极端的数据）的概率，也就是说它指向的是数据，但大部分情况下我们根本不关心这，我们关心的是凭着手上的数据，假设有多大的可能成立。我们关心的是假设，不是数据。xkcd的这幅<a href="https://xkcd.com/1132/">漫画</a>很好地体现了这种区别。<img src="/assets/images/frequentist_vs_bayesians.jpg"></p>
+<p>这个问题已经是<a href="http://www.guokr.com/article/438043/">老生常谈</a>了。p值的含义是在零假设成立的情况下观察到手上数据（或比手上数据更极端的数据）的概率，也就是说它指向的是数据，但大部分情况下我们根本不关心这，我们关心的是凭着手上的数据，假设有多大的可能成立。我们关心的是假设，不是数据。xkcd的这幅<a href="https://xkcd.com/1132/">漫画</a>很好地体现了这种区别。</p>
+<img src="/assets/images/frequentist_vs_bayesians.jpg">
 
 <p>这里我们根本不关心骰子出现这种结果的概率有多大，我们关心的是太阳爆炸的概率有多大。虽然这二者是成正比的，但比例系数（先验概率）可大可小（这里太阳爆炸的先验概率就很小），所以从前者常常推不出太多关于后者的信息，而我们又极度地渴望后者，结果就是p值总是被误用和误读，当它难得被正确使用时，它却是在<a href="http://www.guokr.com/article/441820/">回答错误的问题</a>。</p>
 
 <h4>The garden of forking paths{%cite gelman2013garden%}</h4>
 
-<p>假设检验的另一个严重问题是多重比较，说到这肯定有人想到了xkcd的另一幅经典<a href="https://xkcd.com/882/">漫画</a>。<img src="/assets/images/xkcd_significant.jpg"></p>
+<p>假设检验的另一个严重问题是多重比较，说到这肯定有人想到了xkcd的另一幅经典<a href="https://xkcd.com/882/">漫画</a>。</p>
+<img src="/assets/images/xkcd_significant.jpg">
 
 <p>这当然是幅很好的漫画，但也有些误导性。它容易让人以为只有这样明显地p-hacking才算多重比较，而大部分科学家肯定是不会这样做的，所以他们就不觉得自己会有多重比较的问题。不是这样的，哪怕你自始至终只检验了一个假设，也依然可能会涉及多重比较，让我们来看个例子。</p>
 
@@ -269,8 +271,8 @@ $$0.02 > 2 * 0.5 * \sqrt{2/n} \Rightarrow n > 5000 $$
 
 <h4>抽屉效应/发表偏见</h4>
 
-<p>理论上，抽屉效应指的是因为期刊喜欢发表新发现，所以一个没得到显著性的研究会被锁在抽屉里，没有机会发表，从而你在期刊上看到的都是正面结果。抽屉效应确实是发表偏见的结果，但我不同意很多人因此把二者混为一谈，进一步的区分是有意义的。现实中，心理学的发表偏见不仅仅是不发表没有得到显著性的论文，如果只是这样，那倒也还好，毕竟有着研究者自由度，躺在抽屉里的文章其实不会太多。糟糕的是它们还不喜欢发表重复实验。心理学家极少重复前人的实验{%cite makel2012replications%}，直接重复就更少了，他们偏好间接重复(conceptual replication)，也就是把原始实验改来改去，理论上相符就好。这一恶习甚至连费曼都注意到了。<img src="/assets/images/conceptual_replication.png"></p>
-
+<p>理论上，抽屉效应指的是因为期刊喜欢发表新发现，所以一个没得到显著性的研究会被锁在抽屉里，没有机会发表，从而你在期刊上看到的都是正面结果。抽屉效应确实是发表偏见的结果，但我不同意很多人因此把二者混为一谈，进一步的区分是有意义的。现实中，心理学的发表偏见不仅仅是不发表没有得到显著性的论文，如果只是这样，那倒也还好，毕竟有着研究者自由度，躺在抽屉里的文章其实不会太多。糟糕的是它们还不喜欢发表重复实验。心理学家极少重复前人的实验{%cite makel2012replications%}，直接重复就更少了，他们偏好间接重复(conceptual replication)，也就是把原始实验改来改去，理论上相符就好。这一恶习甚至连费曼都注意到了。</p>
+<img src="/assets/images/conceptual_replication.png">
 <h4>错误链式反应</h4>
 
 <p>当我们把上面的种种因素拼在一起时，一个危机蔓延的动力学模型就呼之欲出了：
@@ -300,7 +302,7 @@ $$0.02 > 2 * 0.5 * \sqrt{2/n} \Rightarrow n > 5000 $$
 
 <h4>正确的应对</h4>
 
-<p>现在来说下作为外人怎么消化这次危机吧。因为心理学的软科学性质，心理学家中最优秀的那一撮对方法论其实思考颇多（比如Meehl），所以他们对危机的到来早有准备，我们来看看大卫·巴斯在《<a href="https://book.douban.com/subject/2143904/">进化心理学</a>》里为大家打的预防针。
+<p>现在来说下作为外人怎么消化这次危机吧。因为心理学的软科学性质，心理学家中最优秀的那一撮对方法论其实思考颇多（比如Meehl），所以他们对危机的到来早有准备，我们来看看大卫·巴斯在《<a href="https://book.douban.com/subject/2143904/">进化心理学</a>》里为大家打的预防针。</p>
 <img src="/assets/images/lakatosian_1.png">
 <img src="/assets/images/lakatosian_2.png">
 <img src="/assets/images/lakatosian_3.png">
@@ -309,7 +311,7 @@ $$0.02 > 2 * 0.5 * \sqrt{2/n} \Rightarrow n > 5000 $$
     <img src="/assets/images/lakatosian_5.png">
     <figcaption>大卫·巴斯把整个第二章都贡献给了方法论，这在外国教材中很常见，而在中国人写的书里你基本看不到。就如辉格<a href="http://headsalon.org/archives/526.html">指出过</a>的，中国人最需要普及的不是科学知识，而是科学哲学。</figcaption>
 </figure>
-熟悉科学哲学的朋友一眼就能看出这套“硬核-保护带-具体假设”的模型正是拉卡托斯的理论，不过可能为了减轻学生负担，巴斯把拉卡托斯的名字藏到了最后引用的文献里（那篇论文的题目叫"Are evolutionary explanations unfalsifiable? Evolutionary psychology and the Lakatosian philosophy of science."）。
+<p>熟悉科学哲学的朋友一眼就能看出这套“硬核-保护带-具体假设”的模型正是拉卡托斯的理论，不过可能为了减轻学生负担，巴斯把拉卡托斯的名字藏到了最后引用的文献里（那篇论文的题目叫"Are evolutionary explanations unfalsifiable? Evolutionary psychology and the Lakatosian philosophy of science."）。
 </p>
 
 <p>通过拉卡托斯的框架可以很好地消化这次危机。经过这次危机，我的认知结构里关于心理学的许多具体假设完全改变了，一部分中级理论节点进行了适当更新，至于硬核……谁会怀疑进化论呢？但显然不是每个人都像我这样。</p>
@@ -317,14 +319,14 @@ $$0.02 > 2 * 0.5 * \sqrt{2/n} \Rightarrow n > 5000 $$
 <h4>错误的应对</h4>
 
 <p>最常见的反应是虚无主义，当面对一个巨大的冲击时，全部否定也确实是最省事的办法，例如这是三联周刊科学记者土摩托。
-<img src="/assets/images/tumotuo.png"></p>
-
+</p>
+<img src="/assets/images/tumotuo.png">
 <p>再下一步就是相对主义。“科学并不总是对的”，每隔一段时间就会有那么一个人（一般是妹子）跟我说这句话，试图让我明白她相信的那套星座、中医……和科学应该有着同样的地位。如果你喜欢观察小粉红的话，你对这种“XX其实也会XX，所以XX和XX本质上是一样的”的论点一定不会陌生，不过小粉红太脏了，我还是举个高贵的女权主义的例子吧。Eve Ensler——前几年很火的《阴道独白》的作者，<a href="http://www.ikexue.org/archives/46148">认为</a>对女性的压迫在世界各地都是完全一样的(<a href="http://www.aei.org/publication/the-subjection-of-islamic-women/">exactly the same</a>)，无论是在西方国家，还是在巴基斯坦、沙特阿拉伯和伊朗。
+</p>
 <figure>
     <img src="/assets/images/stoning.gif">
     <figcaption>正在被<a href="http://www.cnn.com/2015/11/04/asia/afghanistan-taliban-woman-stoning/index.html">石刑处决</a>的阿富汗少女。至于女性割礼的图，我就不放了吧。</figcaption>
-</figure></p>
-
+</figure>
 <p>最后就是解构主义了，不过像《<a href="https://en.wikipedia.org/wiki/Sokal_affair">跨越界线：通往量子引力的转换诠释学</a>》这种东西实在不是我写得来的，还是把它留给各位后现代大神（经）吧。</p>
 
 <p>你应该已经看出一个层次化的认知模型有多重要，否则稍不注意就不知道滑到哪里去了。但这自然带来了一个疑问，我们之前刚刚批评过心理学中从理论到观测的链条太过松垮，拉卡托斯的这个模型难道不也是这样吗？我的回答是这样的：辅助假设是不可避免的，你应该让它尽量的紧实（就像物理学中那样），但如果你拉得太过头，赋予了它多于事实能支撑的强度，那整个结构又会牵一发而动全身，也是不行的。至于怎么样的强度算恰当，这就取决于你的学术品味了。品味这东西一两句也说不清，我只能尽力而为，一方面我可以给你<a href="https://book.douban.com/people/whigzhou/collect?sort=rating&start=0&mode=grid&tags_sort=count">推荐</a>一些<a href="https://book.douban.com/people/tcya/collect?sort=rating&start=0&mode=grid&tags_sort=count">比较好</a>的书，品味都是<a href="http://headsalon.org/archives/6935.html">多吃好东西培养出来的</a>；另一方面我可以提供一些拇指法则，尽量帮你避开一些坑：
@@ -343,11 +345,11 @@ $$0.02 > 2 * 0.5 * \sqrt{2/n} \Rightarrow n > 5000 $$
 <p>写了这么多，可能有人会觉得”认识这世界好难啊“，但我想说的其实是它也好有趣啊。我知道大多数人可能无法体会这种乐趣，想想你有两个差不多的选择和只有一个选择时的心理状态，前者常常反而让你更焦虑。在不确定性中权衡、评估、决策是件费脑的事，我们渴望确定性。</p>
 
 <p>对此进化给出的解法是观测-评估-权衡-决策-保持-迭代，举例来说，当一个人搬了新家，为了解决吃饭问题，他一开始会先多尝试几家餐馆，在评估比较后选出一些适合的（适合自己吃的、适合和朋友夜宵的、适合约妹子的……），之后这个决策过程就极大地自动化了，直到餐馆质量发生了足够大的变化，那就再启动新一轮的评估。当然各个环节并不是泾渭分明的，整个过程更类似于多臂老虎机(<a href="https://en.wikipedia.org/wiki/Multi-armed_bandit">multi-armed bandit</a>)问题的<a href="https://en.wikipedia.org/wiki/Multi-armed_bandit#Semi-uniform_strategies">epsilon-decreasing</a>解法，一开始探索性质多一些，然后慢慢减少。这样的做法牺牲了一定的准确性，但节省了大量的认知资源，是合理的。问题出在有些人的迭代频率如此之低，低到一辈子就评估那么一次。
+</p>
 <figure>
     <img src="/assets/images/eat_brain.png">
     <figcaption>有的人25岁就死了，只是到75岁才埋葬。——富兰克林</figcaption>
-</figure></p>
-
+</figure>
 <p>在生理上，这对应着大脑神经会在青春期经历一次大规模的<a href="https://www.ted.com/talks/sarah_jayne_blakemore_the_mysterious_workings_of_the_adolescent_brain?language=zh-cn#t-679538">修剪</a>，之后就相对稳定下来。这种模式在停滞的传统社会是适应的，通过青春期躁动在部落/村庄中找到尽可能好的生态位，之后就安稳过日子吧，就算你想学也没啥东西能让你学了，但在现在这个时代，这种做法显然已经不合适了。可惜，很多人的大脑还没能跟上这个变化。</p>
 
 <p>这些年我看着不少朋友变得日渐愚蠢偏执，曾经的理性和趣味在他们身上慢慢褪去，说实话有时候是很伤感的。当然我能够体谅，但依然觉得遗憾，所以写下这篇文章，希望你们能再出门看看。</p>
