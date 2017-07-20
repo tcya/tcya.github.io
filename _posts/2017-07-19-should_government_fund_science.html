@@ -1,0 +1,70 @@
+---
+layout: post
+title:  饼图的妙用
+---
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+</head>
+<body>
+<p>在数据可视化领域，饼图被普遍<a href="http://www.businessinsider.com/pie-charts-are-the-worst-2013-6">认为</a>是个非常糟糕的可视化方法，只有在<a href="http://www.neoformix.com/2007/InDefenseOfPieCharts.html">一些</a>特定<a href="http://speakingppt.com/2013/03/18/why-tufte-is-flat-out-wrong-about-pie-charts/">情况</a>下你才应该使用它。</p>
+
+<p>但是谁说糟糕的东西就一定没用了呢？</p>
+<!-- excerpt break -->
+<p>
+<img src="/assets/images/food_wheel.gif">
+</p>
+
+<p>上图是美国农业部1984年推出的饮食建议<a href="http://www.vmps.us/pattern-daily-food-choices-dietary-guide-us-department-agriculture">food wheel</a>。应该不用我说了，它简直就是数据可视化灾难，你从图上能看出每天该多吃谷物还是肉吗？</p>
+
+<p>当然我们农业部是对美国人民负责滴，我们都是请最专业的科学家来为我们写膳食指南。同行评议！学科共识！你们的身体健康就放心地交给政府吧！于是在1992年，农业部根据最新的研究进展，把饼图换成了<a href="https://en.wikipedia.org/wiki/Food_pyramid_(nutrition)">金字塔</a>。</p>
+<img src="/assets/images/USDA_Food_Pyramid.gif">
+<p>这就好看多了嘛，至少能看出每天吃最多的得是谷物。这种改进大家肯定都应该赞成的对不对？当然不对啊，肉类行业的人就不乐意了嘛，原来我可以躲在饼图里浑水摸鱼，大家看起来都差不多，现在你们把谷物放在最底层，<del>会不会给人一种钦定的感觉</del>所有人不都一眼就看出来应该多吃饭少吃肉了吗？于是他们进行了大规模的游说活动，当然没有收到任何效果，谁让他们的对手是科学呢？当时的场景大概是这样的（纯属虚构）：</p>
+
+<p>什么？你想把金字塔改回饼图？不可能，饼图的可视化效果太糟糕了，我们要为老百姓着想，让他们能更方便地理解最新的学术成果，我们要尊重科学……哦你不改图了？你<a href="https://qz.com/523255/the-us-meat-industrys-wildly-successful-40-year-crusade-to-keep-its-hold-on-the-american-diet/">想把</a>“decrease consumption of meat and increase consumption of poultry and fish”改成“decrease consumption of animal fat, and choose meats, poultry, and fish which will reduce saturated fat intake”？嗯这样一改感觉更客观了呢，而且原来的说法语气确实有点生硬，万一对肉类行业造成冲击，容易扰乱经济秩序，我作为参议员，得负起对人民的责任……</p>
+
+<p>然后到了2005年，food pyramid又被改成了<a href="https://en.wikipedia.org/wiki/MyPyramid">MyPyramid</a>。</p>
+<img src="/assets/images/MyPyramidFood.png">
+
+<p>咦……嗯……这个可视化效果嘛……反正农业部是不会骗我们的，他们一定是根据最新的学科共识才决定改成这样的！</p>
+
+<p>然后到了<a href="https://en.wikipedia.org/wiki/MyPlate">2011年</a>，</p>
+
+<img src="/assets/images/USDA_MyPlate.png">
+
+<p>唔…………</p>
+
+<p>《美国居民膳食指南》是营养学科普作家最爱引用的资料，看着这本业内权威的书呈现核心内容的方式从饼图到金字塔到后现代金字塔再到后现代饼(?)图，我不禁陷入了婶婶的思考，“幸好我没去学营养学啊，不然以我的脑袋肯定是跟不上进步这么迅速的学科共识的。”</p>
+
+<p>然后我忍不住又继续想，还有什么学科也是这样拿着政府文件当个宝的吗？好像没……哦哦，IPCC嘛。这样一来很多<a href="http://heart.dxy.cn/article/524369">事情</a>好像都<a href="https://wattsupwiththat.com/2010/04/12/the-new-math-ipcc-version/">说得通</a>了呢。</p>
+
+<p>好吧，我严肃一点。大部分科学家都认为政府应该资助科学研究，我是不同意的，我就不提政府对科学的腐蚀作用了，你自己再看一眼上面的那些图和链接就好了。让我们听听科学家的理由吧，最常见的就两个：第一，科学太美好，是人类智力的最高成就。然后呢？没了……大概渐渐意识到”因为我很有好奇心所以纳税人得养我“确实太不要脸，现在大部分人都会补上第二个理由，科学发现的过程中<a href="http://songshuhui.net/archives/87080">会产生</a>许多有用的副产品，阿波罗计划不就给我们<a href="https://www.zhihu.com/question/31186384">带来了</a>许多新材料吗？这点车轱辘话在明星物理学家Brian Cox的TED的演讲里算是被发挥到了极致。</p>
+
+<iframe src="https://embed.ted.com/talks/lang/zh-cn/brian_cox_why_we_need_the_explorers" width="100%" height="350px" frameborder="0" scrolling="no" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
+
+<p>让我们来理下他的套路，先给你看一大堆太空照片，让你领略科学之美（确实很美，这个没毛病）；然后说阿波罗计划是有经济效益的，不亏钱（这是大科学的代表作，不提不好意思）；至此两点理由都说完了，剩下的就是情怀了。首先作为萨根生态位的继承者，你最后肯定得念一段优美的<a href="https://en.wikipedia.org/wiki/Pale_Blue_Dot">暗淡蓝点</a>（确实很美，这个也没毛病），然后再以“如果在20世纪20年代做出这样的结论，人们就不会发现青霉素。 如果是在19世纪90年代，人们就不会发明晶体管。”这样的话作为结束，唤起观众的危机感，最后大家起立鼓掌，又一个标准的TED演讲。</p>
+
+<p>为了不显得太吹毛求疵，我们就先假装不知道青霉素的发现有一部分钱是洛克菲勒赞助的吧，也假装晶体管的<a href="https://en.wikipedia.org/wiki/History_of_the_transistor">发现</a>真的能追溯到19世纪，但是Brian啊，你一面引用着暗淡蓝点，一面却似乎忘了——或者假装忘了，你的偶像卡尔·萨根在同名著作中是这样说的：</p>
+<img src="/assets/images/sagan_science_funding1.png">
+<img src="/assets/images/sagan_science_funding2.png">
+
+<p>费曼那就更直接了，</p>
+<img src="/assets/images/Feynman_science_funding.png">
+
+<p>如果你好奇为什么这么有名的科学家会在大庭广众犯些这么低级的错误，那说明你想错了问题。政府资金分配是个公共政策问题，不是科学问题，所以科学家表现差是正常的，这事还是得听经济学家的。</p>
+
+<p>经济学101对此的标准答案是科学有正的外部性，市场会供给不足，所以得靠政府介入。这论证一看就比Brian不知道高到哪里去了，不过可惜，还是有问题的。这个论证的问题在于把不完美的市场拿去和假定完美的政府比，比不过不是很正常吗？在几十年前你还可以为这种观点辩护：“我们知道政府也不可能完美，但经济学家还不知道怎么用经济学理论研究政府行为，所以我们可以假装没看到，因为我们经济学家只在路灯下找钥匙。”但随着公共选择学派的兴起，这理由已经不好使了，于是现在我们不得不比较不完美的市场和不完美的政府，这就只能靠定量分析了。为了避免陷入大量的技术细节把这篇文章<a href="http://tcya.github.io/2017/07/16/p_value.html">又写成</a>一万字，我还是不展开了，但我觉得说双方都没有压倒性的证据应该还是<a href="https://www.cato.org/publications/commentary/end-government-science-funding">没问题的</a>。</p>
+
+<p>然后我想说就算政府真的完美的能弥补一点市场的不足吧，那效果有多大呢？根据<a href="https://en.wikipedia.org/wiki/Funding_of_science#USA">维基</a>，2013年美国全年投入研发的资金是4561亿，其中3225亿来自私人部门的，占71%。就算政府资金全部撤出后私人只能补上三分一吧，那总额也还能有现在的80%。少那20%很严重吗？当然，因为政府经费主要集中在学院，学术圈受的冲击会大于20%，不过现在一年全世界诞生上百万篇的新论文，就算我们以后每年只能产出现在60%的论文，好像也不是很严重吧？如果你觉得很严重，那我也没啥办法（因为这就涉及定量了），只好笑笑然后给你讲个段子，</p>
+
+<blockquote>《Nature》体积的增长速度已经超过光速了，但是这并不违反相对论，因为它不携带任何信息。</blockquote>
+
+<p>最后，作为一个深爱着科学的人，我不喜欢这些政府资助的鼓吹者还有情感上的理由。如果你真的觉得一个东西美好，你怎么会觉得除了政府没人会愿意<a href="https://www.nytimes.com/2014/03/16/science/billionaires-with-big-ideas-are-privatizing-american-science.html?_r=0">赞助</a>她？如果你真的觉得一个东西纯洁，你怎么会希望政府的脏手去碰她？如果你是个自爱的人，你怎么会把自己搞得跟希腊公务员一个德行？</p>
+
+<figure>
+    <img src="/assets/images/scientist_protesting.jpg">
+    <figcaption>科学家<a href="http://news.sina.com.cn/w/sy/2017-04-23/doc-ifyepsec0478720.shtml">上街抗议</a>分到的税金不够多</figcaption>
+</figure>
+</body>
+</html>
