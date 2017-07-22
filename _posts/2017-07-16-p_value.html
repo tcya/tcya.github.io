@@ -172,7 +172,7 @@ $$corr(X, Y) = \frac{cov(X, Y)}{\sigma_X \sigma_Y} = 0.072$$
 <p>GVT只不过是这几年科学可重复性危机的冰山一角，在心理学领域大量重复失败的研究里<a href="#open2015estimating"><span style="vertical-align: super">7</span></a>，GVT的论文质量算是比较好的了。我再随便举两个出了问题的研究：
     <ul>
         <li>哈佛美女教授Amy Cuddy在TED上的著名演讲，认为强势的身体动作(power pose)可以助你成功。这个演讲在TED上观看次数超过四千两百万，是历史第二多，当时在社交网站上也掀起了一波"Fake it until you make it"的鸡汤潮。结果不仅没重复出来，原论文的另一个作者还直接在网上写了一封<a href="http://faculty.haas.berkeley.edu/dana_carney/pdf_My%20position%20on%20power%20poses.pdf">公开信</a>，声称观点已变，现在认为power pose效应不存在了，建议其他研究者别再浪费时间。<img src="/assets/images/power_pose.png"></li>
-        <li>社会启动效应(social priming)。这个领域发端于John Bargh1996年的研究<a href="#bargh1996automaticity"><span style="vertical-align: super">8</span></a>，他们让学生从五个词里挑四个出来造句，一组学生拿到的是普通词，另一组拿到的是与老年相关的词汇，比如健忘、秃顶、满脸皱纹、佛罗里达，实验完后他们告诉学生穿过大厅去另一个地方做下一组实验，但他们关心的其实既不是造句也不是下一个实验，而是学生穿过走廊的速度，他们发现那些被老年相关词汇启动(prime)了的学生比另一组慢了将近一秒。这个惊人的结果启发了大量后续研究，十几年来整个领域欣欣向荣，Bargh的原论文已被引用了四千多次。人们发现啥都能拿来prime，比如让你描述一个严厉教授的样子你考试就能<a href="http://blogs.discovermagazine.com/neuroskeptic/2016/10/13/social-priming-works-after-all/#.WW2hzdPyvdQ">考的更好</a>，考卷字迹模糊也能让你<a href="http://weibo.com/p/1001603935981584676451">考得更好</a>……卡尼曼在《思考：快与慢》里举了整整一章的例子，我们来稍微感受一下，
+        <li>社会启动效应(social priming)。这个领域发端于John Bargh1996年的研究<a href="#bargh1996automaticity"><span style="vertical-align: super">8</span></a>，他们让学生从五个词里挑四个出来造句，一组学生拿到的是普通词，另一组拿到的是与老年相关的词汇，比如健忘、秃顶、满脸皱纹、佛罗里达，实验完后他们告诉学生穿过大厅去另一个地方做下一组实验，但他们关心的其实既不是造句也不是下一个实验，而是学生穿过走廊的速度，他们发现那些被老年相关词汇启动(prime)了的学生比另一组慢了将近一秒。这个惊人的结果启发了大量后续研究，十几年来整个领域欣欣向荣，Bargh的原论文已被引用了四千多次。人们发现啥都能拿来prime，比如让你描述一个严厉教授的样子你考试就能<a href="http://blogs.discovermagazine.com/neuroskeptic/2016/10/13/social-priming-works-after-all/#.WW2hzdPyvdQ">考得更好</a>，考卷字迹模糊也能让你<a href="http://weibo.com/p/1001603935981584676451">考得更好</a>……卡尼曼在《思考：快与慢》里举了整整一章的例子，我们来稍微感受一下，
         <img src="/assets/images/social_priming_1.png">
         <img src="/assets/images/social_priming_2.png">
         <img src="/assets/images/social_priming_3.png">
@@ -250,7 +250,7 @@ $$corr(X, Y) = \frac{cov(X, Y)}{\sigma_X \sigma_Y} = 0.072$$
 <p><img src="/assets/images/Satoshi_Kanazawa.png"></p>
 
 <p>他还合著过一本书，书名也很简单粗暴，叫<<a href="https://book.douban.com/subject/2351927/">Why Beautiful People Have More Daughters</a>>（<a href="https://book.douban.com/subject/4913068/">中译本</a>叫《生猛的进化心理学》）。我对政治不正确的研究没有任何意见——如果不是喜闻乐见的话，但是你的方法得靠谱啊。Kanazawa的研究充满了各种统计错误<a href="#gelman2014beyond"><span style="vertical-align: super">20,26,27,28</span></a>，我们以上图最后一篇论文为例，他分析了<a href="http://www.cpc.unc.edu/projects/addhealth">Add Health数据集</a>，这是最大、最综合的关于青少年的长期追踪数据集，从人们还是青少年时开始追踪，四次回访，记录了这些人的许多信息，其中两个与这里的话题有关，一是这些人的孩子的性别，二是调查人员会对被采访者的外貌打分，从最丑到最美共有五档。Kanazawa选取了第三次回访中有孩子的人（2972个）进行了分析，他发现最美的一档生女孩的可能性比其他人高8个百分点(56% vs
-48%)，p < 0.05，所以，beautiful parents have more daughters。首先这里存在明显的多重比较问题，第一档和其他档比显著了，和最丑的一档、倒数第二档比怎么反而都不显著了呢？为什么不把最美的两档和剩下的三档比，假如这么比显著的话Kanazawa会不提吗？……这里更好的办法显然是对外貌和出生性别建模，弄个回归方程啥的，而不是进行假设检验。不过即使那样也是毫无意义的，为什么呢？因为，你觉得2972个样本在这里效力够吗？</p>
+48%)，p < 0.05，所以，beautiful parents have more daughters。首先这里存在明显的多重比较问题，第一档和其他档比显著了，和最丑的一档比怎么反而不显著了呢？为什么不把最美的两档和剩下的三档比，假如这么比显著的话Kanazawa会不提吗？……这里更好的办法显然是对外貌和出生性别建模，弄个回归方程啥的，而不是进行假设检验。不过即使那样也是毫无意义的，为什么呢？因为，你觉得2972个样本在这里效力够吗？</p>
 
 <p>假如放平时我相信大部分人都觉得够了，快三千个样本，在心理学里是很大型的研究了，今天你还可以看到很多研究就几十个样本呢。但现在我这么一问你应该也知道答案是不够，那我再问，你觉得多少样本才够呢？</p>
 
