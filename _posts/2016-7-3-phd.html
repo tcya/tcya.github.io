@@ -312,7 +312,7 @@ title:  "此情可待成追忆，吃饭睡觉PhD"
 <script type="text/javascript">
   "use strict";
   var gdp;
-  d3.json("/assets/gdp_pisa.json", function(json) { gdp = json; });
+  d3.json("/assets/data/gdp_pisa.json", function(json) { gdp = json; });
   slide7();
 
   function slide7() {
@@ -322,7 +322,7 @@ title:  "此情可待成追忆，吃饭睡觉PhD"
           .attr('id', 'slide7');
 
       // Draw interactive map
-      d3.json("/assets/world_map.json", draw);
+      d3.json("/assets/data/world_map.json", draw);
 
       function draw(geo_data) {
         var margin = 5;
@@ -548,7 +548,7 @@ title:  "此情可待成追忆，吃饭睡觉PhD"
           .attr("transform", "translate(" + margin + "," + margin + ")");
 
       // Load quantiles of scores for countries
-      d3.json("/assets/data.json", function(error, json) {
+      d3.json("/assets/data/PISA.json", function(error, json) {
           if (error) return console.warn(error);
 
           var data = json[cnt][factor];
