@@ -140,6 +140,11 @@ title:  心理学的危机
 
 <p>首先，直觉是没错的，扔出多少次正面都不会影响后续的结果，这体现在第三列的和一定是第二列和的一半，但第四列的和却一定小于第二列的一半。区别在哪呢？在于\(E(X)/E(Y) \neq E(X/Y) \)。\(E(HH)/E(HX)\)一定等于0.5，但\(E(HH/HX) \)就不一定了。这样我们就理解了为什么这个概率不是0.5，那它为什么还一定会小于0.5呢？我们假想这样一张表，它的前两列与上表完全一样，但第三列的数都正好是第二列的一半，从而第四列就都是0.5。假想表与上表的第三列虽然不一样，但和是一样的，所以我们可以在不同行间挪动第三列的数值，这行加一点，那行就减掉一点，始终保持第三列的和不变，这样最终我们可以得到上表。这种操作会给第四列的均值带来什么影响呢？会让它变小。理由是这样的：记第二列第\(i\)行的数为\(n_i\)，第三列第\(i\)行的数为\(k_i\)，那第四列的相应数值就是\(k_i / n_i \)，当我们从第\(i\)行挪一单位第三列的值给第\(j\)行时，第四列的和的变化是\(1/n_j -1/n_i \)。所以假如\(n\)大的那些行\(k\)倾向于大于\(n/2\)，那第四列的均值就会小于假想表的均值——0.5。观察上表你会发现这个倾向是存在的，所以均值确实小于0.5。那这个倾向是怎么来的呢？来源于重复计算。也就是HHT会被我们当做HH和HT算两遍，这在序列长度为4的情况下会看的更清楚，如果我们把HHHT算作HH、HH、HT，那H多的序列HH会异常的多，算出来的概率就会小于0.5，如果我们不重复计算，只把它拆成HH、HT，那就不会有任何偏差，预期概率=0.5，这点你可以自行验证。</p>
 
+<figure>
+    <img src="/assets/images/streaking_prob.png">
+    <figcaption>下一次投掷是正面的概率对不同的投掷次数n、连续出现正面的次数k和单次投掷出现正面的概率p作图。“扔一百次，观察连扔出三个正面后下一次的结果”对应着n=100，k=3，p=0.5，下一次是正面的概率约为0.46。图片取自论文{%cite miller2016surprised %}。</figcaption>
+</figure>
+
 <p>假如你还没想明白，这篇论文{% cite miller2015bridge %}提供了这个问题由易到难的各种变形，其中还包括一道Google以前的面试题：</p>
 
 <p><em>有个国家特别地重男轻女，每家都一直生一直生直到生出儿子为止（只要生出儿子他们就不再生了），请问这个国家人口中女性的比例预期是多少？</em></p>
@@ -180,7 +185,7 @@ $$corr(X, Y) = \frac{cov(X, Y)}{\sigma_X \sigma_Y} = 0.072$$
 
 <h4>The Earth Is Round (p < .05) {%cite Cohen1993%}</h4>
 
-<p>p值——以及更一般的，整个假设检验范式，在这次危机中起了核心作用。越来越多人知道这套范式不好，但大多数人还没意识到它到底有多糟，对此，备受尊敬的前美国心理学会会长保罗·米尔(Paul Meehl)是这么说的{%cite meehl1978theoretical%}，</p>
+<p>p值——以及更一般的，整个假设检验范式，在这次危机中起了核心作用。越来越多人知道单纯地依赖这套范式不好，但大多数人还没意识到它到底有多糟，对此，备受尊敬的前美国心理学会会长保罗·米尔(Paul Meehl)是这么说的{%cite meehl1978theoretical%}，</p>
 <blockquote>I believe that the almost universal reliance on merely refuting the null hypothesis as the standard method for corroborating substantive theories in the soft areas is a terrible mistake, is basically unsound, poor scientific strategy, and one of the worst things that ever happened in the history of psychology.</blockquote>
 
 <p>p值带来了<a href="https://en.wikipedia.org/wiki/Misunderstandings_of_p-values">太多的误解</a>{%cite greenland2016statistical%}，连美国统计学会都少见的出来说了几句{%cite wasserstein2016asa%}，这里是几点主要的。</p>
