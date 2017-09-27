@@ -185,10 +185,10 @@ $$corr(X, Y) = \frac{cov(X, Y)}{\sigma_X \sigma_Y} = 0.072$$
 
 <h4>The Earth Is Round (p < .05) <a href="#Cohen1993"><sup>13</sup></a></h4>
 
-<p>p值——以及更一般的，整个假设检验范式，在这次危机中起了核心作用。越来越多人知道单纯地依赖这套范式不好，但大多数人还没意识到它到底有多糟，对此，备受尊敬的前美国心理学会会长保罗·米尔(Paul Meehl)是这么说的<a href="#meehl1978theoretical"><sup>14</sup></a>，</p>
+<p>一方面其实是<a href="http://andrewgelman.com/2016/09/22/why-is-the-scientific-replication-crisis-centered-on-psychology/">因为</a>心理学比许多同样危机重重的学科更开放、关注度更高，另一方面它也确实有着自身的问题。心理学中广泛使用的p值——以及更一般的，整个假设检验范式，在这次危机中起着核心作用。越来越多人知道单纯地依赖这套范式不好，但大多数人还没意识到它到底有多糟，对此，备受尊敬的前美国心理学会会长保罗·米尔(Paul Meehl)是这么说的<a href="#meehl1978theoretical"><sup>14</sup></a>，</p>
 <blockquote>I believe that the almost universal reliance on merely refuting the null hypothesis as the standard method for corroborating substantive theories in the soft areas is a terrible mistake, is basically unsound, poor scientific strategy, and one of the worst things that ever happened in the history of psychology.</blockquote>
 
-<p>p值带来了<a href="https://en.wikipedia.org/wiki/Misunderstandings_of_p-values">太多的误解</a><a href="#greenland2016statistical"><sup>15</sup></a>，连美国统计学会都少见的出来说了几句<a href="#wasserstein2016asa"><sup>16</sup></a>，这里是几点主要的。</p>
+<p>p值带来了<a href="https://en.wikipedia.org/wiki/Misunderstandings_of_p-values">太多的误解</a><a href="#greenland2016statistical"><sup>15-17</sup></a>，连美国统计学会都少见的出来说了几句<a href="#wasserstein2016asa"><sup>18</sup></a>，如何改进也是众说纷纭<a href="#cumming2014new"><sup>19-22</sup></a>，这里是几点主要的。</p>
 
 <h4><a href="https://en.wikipedia.org/wiki/Confusion_of_the_inverse">Confusion of the inverse</a></h4>
 
@@ -197,7 +197,7 @@ $$corr(X, Y) = \frac{cov(X, Y)}{\sigma_X \sigma_Y} = 0.072$$
 
 <p>这里我们根本不关心骰子出现这种结果的概率有多大，我们关心的是太阳爆炸的概率有多大。虽然这二者是成正比的，但比例系数（先验概率）可大可小（这里太阳爆炸的先验概率就很小），所以从前者常常推不出太多关于后者的信息，而我们又极度地渴望后者，结果就是p值总是被误用和误读，当它难得被正确使用时，它却是在<a href="http://www.guokr.com/article/441820/">回答错误的问题</a>。</p>
 
-<h4>The garden of forking paths<a href="#gelman2013garden"><sup>17</sup></a></h4>
+<h4>The garden of forking paths<a href="#gelman2013garden"><sup>23</sup></a></h4>
 
 <p>假设检验的另一个严重问题是多重比较，说到这肯定有人想到了xkcd的另一幅经典<a href="https://xkcd.com/882/">漫画</a>。</p>
 <img src="/assets/images/xkcd_significant.jpg">
@@ -208,38 +208,38 @@ $$corr(X, Y) = \frac{cov(X, Y)}{\sigma_X \sigma_Y} = 0.072$$
 
 <p>多好的研究，有什么问题吗？没有任何问题——除了结果是我编的。他们并没有发现手臂越粗的人越反对再分配，他们发现的是男性手臂越粗就越反对，但女性身上没有这种效应。</p>
 
-<p>很合理啊，战斗、掠夺、守卫资源本来就是男性的事，完美符合进化史，有什么问题吗？没有任何问题——除了结果是我编的。他们也没有发现男性手臂越粗越反对再分配，他们发现的是社会地位高的男性手臂越粗越反对，社会地位低的手臂越粗反而越支持<a href="#petersen2013ancestral"><sup>18</sup></a>。</p>
+<p>很合理啊，战斗、掠夺、守卫资源本来就是男性的事，完美符合进化史，有什么问题吗？没有任何问题——除了结果是我编的。他们也没有发现男性手臂越粗越反对再分配，他们发现的是社会地位高的男性手臂越粗越反对，社会地位低的手臂越粗反而越支持<a href="#petersen2013ancestral"><sup>24</sup></a>。</p>
 
 <p>也很合理啊，地位低当然喜欢再分配嘛，有什么问题吗……</p>
 
 <p>有啊，假如他们发现胳膊越粗的人越反对再分配他们会发表文章并视为对自己理论的支持吗？我相信会的；假如他们发现男性手臂越粗越反对再分配他们会发表文章并视为对自己理论的支持吗？我相信会的；假如他们这些都没有发现，但是发现年纪大的男性手臂越粗越反对再分配但年纪轻的男性反之他们会发表文章并视为对自己理论的支持吗？我相信会的，因为年长的人往往积累了更多财富需要捍卫嘛；假如他们发现年纪轻的男性手臂越粗越反对再分配但年长的男性反之他们会发表文章并视为对自己理论的支持吗？我相信会的，因为年轻正是自我打拼赚资源的时候，再分配不符合这种雄心壮志……</p>
 
-<p>我随口编的这些“解释”也许并不都合理，我也不认为Tooby夫妇会有任何学术不端（做为进化心理学的忠实拥趸，我很尊敬他们），我想说的正是即使你十分正直诚实，你完全在数据的指引下寻找结论，你自始至终只做了一次假设检验，你依然可能涉及多重比较——潜在的多重比较<a href="#gelman2016problems"><sup>19</sup></a>，而这也正是假设检验的危险之处。当然这种情况还叫多重比较已经不合适了，更好的叫法是多重建模(multiple modeling)<a href="#young2011deming"><sup>20</sup></a>，或者研究者自由度(researcher degrees of freedom)。这种自由度可以在参与者浑然不觉的情况下轻易地让p值产生巨大的变化<a href="#simmons2011false"><sup>21</sup></a>，因此也非常地难以避免。一个简单的解决办法<a href="http://www.guokr.com/article/438043/">就是</a>把研究显式地分为探索阶段和验证阶段，探索阶段有了任何新发现，就固定数据分析方法，进行预注册实验，看看在验证阶段是否能重复出来。这适用于成本低廉的实验，但有些实验重复起来太不现实，那就只好采用其它方法，贝叶斯多层模型是一个不错的选择，因为partial pooling，它能在很大程度上自动校正多重比较问题<a href="#gelman2012we"><sup>22</sup></a>。</p>
+<p>我随口编的这些“解释”也许并不都合理，我也不认为Tooby夫妇会有任何学术不端（做为进化心理学的忠实拥趸，我很尊敬他们），我想说的正是即使你十分正直诚实，你完全在数据的指引下寻找结论，你自始至终只做了一次假设检验，你依然可能涉及多重比较——潜在的多重比较<a href="#gelman2016problems"><sup>25</sup></a>，而这也正是假设检验的危险之处。当然这种情况还叫多重比较已经不合适了，更好的叫法是多重建模(multiple modeling)<a href="#young2011deming"><sup>26</sup></a>，或者研究者自由度(researcher degrees of freedom)。这种自由度可以在参与者浑然不觉的情况下轻易地让p值产生巨大的变化<a href="#simmons2011false"><sup>27</sup></a>，因此也非常地难以避免。一个简单的解决办法<a href="http://www.guokr.com/article/438043/">就是</a>把研究显式地分为探索阶段和验证阶段，探索阶段有了任何新发现，就固定数据分析方法，进行预注册实验，看看在验证阶段是否能重复出来。这适用于成本低廉的实验，但有些实验重复起来太不现实，那就只好采用其它方法，贝叶斯多层模型是一个不错的选择，因为partial pooling，它能在很大程度上自动校正多重比较问题<a href="#gelman2012we"><sup>28</sup></a>。</p>
 
 <figure>
     <img src="/assets/images/all_poss_p.png">
-    <figcaption>一项研究发现单身女性在排卵期内会更有可能投票给奥巴马，相反，处于排卵期的非单身女性更愿意投给罗姆尼，变化值超过十个百分点<a href="#durante2013fluctuating"><sup>23</sup></a>，这背后当然也有一套进化理论啦，但让我们来看下数据处理上可能的自由度吧：大姨妈后的第几天到第几天算排卵期？那些大姨妈不规律的样本要不要排除掉？如果调查对象对上次大姨妈的时间不够确定，要排除掉吗？多不确定才排除？怎么样算非单身？处于暧昧期的算吗？一垒呢？二垒呢？三垒呢？四垒呢？五垒呢？……<a href="http://themonkeycage.org/2013/05/more-on-those-psychological-science-papers-menstrual-cycles-and-political-attitudes-biceps-size-and-political-attitudes/">Andrew Gelman</a>认为整个数据至少有168种完全合理的处理方式，然后他把168个置信区间全<a href="https://youtu.be/fc1hkFC2c1E?t=2633">算了一遍</a>，得到上图，蓝线对应的是论文<a href="#durante2013fluctuating"><sup>23</sup></a>实际采用的分析方法。</figcaption>
+    <figcaption>一项研究发现单身女性在排卵期内会更有可能投票给奥巴马，相反，处于排卵期的非单身女性更愿意投给罗姆尼，变化值超过十个百分点<a href="#durante2013fluctuating"><sup>29</sup></a>，这背后当然也有一套进化理论啦，但让我们来看下数据处理上可能的自由度吧：大姨妈后的第几天到第几天算排卵期？那些大姨妈不规律的样本要不要排除掉？如果调查对象对上次大姨妈的时间不够确定，要排除掉吗？多不确定才排除？怎么样算非单身？处于暧昧期的算吗？一垒呢？二垒呢？三垒呢？四垒呢？五垒呢？……<a href="http://themonkeycage.org/2013/05/more-on-those-psychological-science-papers-menstrual-cycles-and-political-attitudes-biceps-size-and-political-attitudes/">Andrew Gelman</a>认为整个数据至少有168种完全合理的处理方式，然后他把168个置信区间全<a href="https://youtu.be/fc1hkFC2c1E?t=2633">算了一遍</a>，得到上图，蓝线对应的是论文<a href="#durante2013fluctuating"><sup>29</sup></a>实际采用的分析方法。</figcaption>
 </figure>
 
 <h4>The law of small numbers</h4>
 
 <p>在GVT的讨论里我们已经提到了效力不足的问题，教科书上对效力的说法是效力不足你就不能发现该发现的东西，现实比这糟的多，你不是没有发现该发现的，而是会发现一堆乱七八糟不该发现的东西。</p>
 
-<p>首先，在效力不足的情况下，得到的p值会很不稳定(p dancing<a href="#cumming2014new"><sup>24</sup></a>)，不显著还好，要是碰巧显著了，恭喜你，你又为学术共同体贡献了一个虚假发现。</p>
+<p>首先，在效力不足的情况下，得到的p值会很不稳定(p dancing<a href="#cumming2014new"><sup>19</sup></a>)，不显著还好，要是碰巧显著了，恭喜你，你又为学术共同体贡献了一个虚假发现。</p>
 
 <figure>
     <img src="/assets/images/p_dancing.png">
     <figcaption>效应值=1，样本标准差=2，对应的<a href="https://en.wikipedia.org/wiki/Effect_size#Cohen.27s_d">Cohen's d</a>=0.5，在心理学中被认为是中等效应。图上是模拟实验一万次得到的p值分布，最左边的柱对应着显著(p≤0.05)，不难看出p值的不稳定。</figcaption>
 </figure>
 
-<p>其次，如果你在效力不足时得到了显著性，你很有可能会严重高估效应值，甚至连符号都可能是错的，这被称作<del>抖</del>S(ign)和M(agnitude)型错误<a href="#gelman2014beyond"><sup>25</sup></a>。<del><a href="https://zh.moegirl.org/zh-hans/%E7%94%B7%E4%BA%BA%E5%8F%98%E6%80%81%E6%9C%89%E4%BB%80%E4%B9%88%E9%94%99">S怎么也能算错误</a></del></p>
+<p>其次，如果你在效力不足时得到了显著性，你很有可能会严重高估效应值，甚至连符号都可能是错的，这被称作<del>抖</del>S(ign)和M(agnitude)型错误<a href="#gelman2014beyond"><sup>30</sup></a>。<del><a href="https://zh.moegirl.org/zh-hans/%E7%94%B7%E4%BA%BA%E5%8F%98%E6%80%81%E6%9C%89%E4%BB%80%E4%B9%88%E9%94%99">S怎么也能算错误</a></del></p>
 
 <figure>
     <img src="/assets/images/type_M_error.png">
     <figcaption>真实效应值=1，可以看出即使效力=0.8估计值也普遍偏高。</figcaption>
 </figure>
 
-<p>那现实中科学研究的效力如何呢？这几年有人评估了神经科学领域的研究，认为中位效力只有21%<a href="#button2013power"><sup>26</sup></a>；经济学领域则不超过18%<a href="#ioannidis2016power"><sup>27</sup></a>；Cohen在62年<a href="https://replicationindex.wordpress.com/2015/09/22/the-statistical-power-of-abnormal-social-psychological-research-a-revew-by-jacob-cohen/">评估</a>了心理学界，认为如果研究的是小效应，当时的效力大概只有18%，中等效应的话有48%<a href="#cohen1962statistical"><sup>28</sup></a>；二十几年后人们用Cohen的方法又研究了一遍，发现心理学研究效力不仅没有改善，还恶化了<a href="#sedlmeier1989studies"><sup>29</sup></a>。这些研究有的有争议，但即使最乐观的研究者大概也不会认为现在的平均效力超过0.5。其实早在1971年，后来的诺奖得主卡尼曼和他的好基友特沃斯基就注意到他们的同行常常严重高估实验的效力，仿照大数定律，他们把这种认为小样本也能很好地代表整体的倾向命名为小数定律<a href="#tversky1971belief"><sup>30</sup></a>。这种错误倾向有多难以克服呢？你只要再读一遍论文作者的名字就知道了。看到了吗？特沃斯基，他就是GVT里的那个T啊，连他都掉到自己发现的坑里去了。而卡尼曼也没好到哪去，几个月前刚刚有人<a href="https://replicationindex.wordpress.com/2017/02/02/reconstruction-of-a-train-wreck-how-priming-research-went-of-the-rails/">指出</a>《思考：快与慢》中关于social priming的那一章是效力严重不足的……卡尼曼爽快地<a href="https://replicationindex.wordpress.com/2017/02/02/reconstruction-of-a-train-wreck-how-priming-research-went-of-the-rails/#comment-1454">承认</a>了错误。</p>
+<p>那现实中科学研究的效力如何呢？这几年有人评估了神经科学领域的研究，认为中位效力只有21%<a href="#button2013power"><sup>31</sup></a>；经济学领域则不超过18%<a href="#ioannidis2016power"><sup>32</sup></a>；Cohen在62年<a href="https://replicationindex.wordpress.com/2015/09/22/the-statistical-power-of-abnormal-social-psychological-research-a-revew-by-jacob-cohen/">评估</a>了心理学界，认为如果研究的是小效应，当时的效力大概只有18%，中等效应的话有48%<a href="#cohen1962statistical"><sup>33</sup></a>；二十几年后人们用Cohen的方法又研究了一遍，发现心理学研究效力不仅没有改善，还恶化了<a href="#sedlmeier1989studies"><sup>34</sup></a>。这些研究有的有<a href="http://www.edvul.com/voodoocorr.php">争议</a><a href="#nord2017power"><sup>35</sup></a>，但即使最乐观的研究者大概也不会认为现在的平均效力超过0.5。其实早在1971年，后来的诺奖得主卡尼曼和他的好基友特沃斯基就注意到他们的同行常常严重高估实验的效力，仿照大数定律，他们把这种认为小样本也能很好地代表整体的倾向命名为小数定律<a href="#tversky1971belief"><sup>36</sup></a>。这种错误倾向有多难以克服呢？你只要再读一遍论文作者的名字就知道了。看到了吗？特沃斯基，他就是GVT里的那个T啊，连他都掉到自己发现的坑里去了。而卡尼曼也没好到哪去，几个月前刚刚有人<a href="https://replicationindex.wordpress.com/2017/02/02/reconstruction-of-a-train-wreck-how-priming-research-went-of-the-rails/">指出</a>《思考：快与慢》中关于social priming的那一章是效力严重不足的……卡尼曼爽快地<a href="https://replicationindex.wordpress.com/2017/02/02/reconstruction-of-a-train-wreck-how-priming-research-went-of-the-rails/#comment-1454">承认</a>了错误。</p>
 
 <p>为了避免让你产生这届心理学家不行的误解，我们来做个测试。</p>
 
@@ -247,30 +247,30 @@ $$corr(X, Y) = \frac{cov(X, Y)}{\sigma_X \sigma_Y} = 0.072$$
 
 <p><img src="/assets/images/Satoshi_Kanazawa.png"></p>
 
-<p>他还合著过一本书，书名也很简单粗暴，叫<em><a href="https://book.douban.com/subject/2351927/">Why Beautiful People Have More Daughters</a></em>（<a href="https://book.douban.com/subject/4913068/">中译本</a>叫《生猛的进化心理学》）。我对政治不正确的研究没有任何意见——如果不是喜闻乐见的话，但是你的方法得靠谱啊。Kanazawa的研究充满了各种统计错误<a href="#gelman2014beyond"><sup>25,31-33</sup></a>，我们以上图最后一篇论文为例，他分析了<a href="http://www.cpc.unc.edu/projects/addhealth">Add Health数据集</a>，这是最大、最综合的关于青少年的长期追踪数据集，从人们还是青少年时开始追踪，四次回访，记录了这些人的许多信息，其中两个与这里的话题有关，一是这些人的孩子的性别，二是调查人员会对被采访者的外貌打分，从最丑到最美共有五档。Kanazawa选取了第三次回访中有孩子的人（2972个）进行了分析，他发现最美的一档生女孩的可能性比其他人高8个百分点(56% vs
+<p>他还合著过一本书，书名也很简单粗暴，叫<em><a href="https://book.douban.com/subject/2351927/">Why Beautiful People Have More Daughters</a></em>（<a href="https://book.douban.com/subject/4913068/">中译本</a>叫《生猛的进化心理学》）。我对政治不正确的研究没有任何意见——如果不是喜闻乐见的话，但是你的方法得靠谱啊。Kanazawa的研究充满了各种统计错误<a href="#gelman2014beyond"><sup>30,37-39</sup></a>，我们以上图最后一篇论文为例，他分析了<a href="http://www.cpc.unc.edu/projects/addhealth">Add Health数据集</a>，这是最大、最综合的关于青少年的长期追踪数据集，从人们还是青少年时开始追踪，四次回访，记录了这些人的许多信息，其中两个与这里的话题有关，一是这些人的孩子的性别，二是调查人员会对被采访者的外貌打分，从最丑到最美共有五档。Kanazawa选取了第三次回访中有孩子的人（2972个）进行了分析，他发现最美的一档生女孩的可能性比其他人高8个百分点(56% vs
 48%)，p < 0.05，所以，beautiful parents have more daughters。首先这里存在明显的多重比较问题，第一档和其他档比显著了，和最丑的一档比怎么反而不显著了呢？为什么不把最美的两档和剩下的三档比，假如这么比显著的话Kanazawa会不提吗？……这里更好的办法显然是对外貌和出生性别建模，弄个回归方程啥的，而不是进行假设检验。不过即使那样也是毫无意义的，为什么呢？因为，你觉得2972个样本在这里效力够吗？</p>
 
 <p>假如放平时我相信大部分人都觉得够了，快三千个样本，在心理学里是很大型的研究了，今天你还可以看到很多研究就几十个样本呢。但现在我这么一问你应该也知道答案是不够，那我再问，你觉得多少样本才够呢？</p>
 
-<p>我们还是来算算吧。生男生女是个伯努利事件，假设我们现在有数量相等的两档人，每一群人数是n，从过往的研究中我们知道人类在极度营养不良下生女孩的概率大约会增加3%<a href="#gelman2009beauty"><sup>33</sup></a>，所以长相对性别比的影响极不可能是8%，撑死2%吧。一群人出生性别比的样本标准差是\(\sqrt{p(1-p)/n}  \approx 0.5/\sqrt{n} \)，两个群体的差值的标准差就是\(0.5 * \sqrt{2/n} \)。2%的效应想要显著，意味着2%得大于两倍标准差，
+<p>我们还是来算算吧。生男生女是个伯努利事件，假设我们现在有数量相等的两档人，每一群人数是n，从过往的研究中我们知道人类在极度营养不良下生女孩的概率大约会增加3%<a href="#gelman2009beauty"><sup>39</sup></a>，所以长相对性别比的影响极不可能是8%，撑死2%吧。一群人出生性别比的样本标准差是\(\sqrt{p(1-p)/n}  \approx 0.5/\sqrt{n} \)，两个群体的差值的标准差就是\(0.5 * \sqrt{2/n} \)。2%的效应想要显著，意味着2%得大于两倍标准差，
 $$0.02 > 2 * 0.5 * \sqrt{2/n} \Rightarrow n > 5000 $$
 这是一个群体的数量，两个群体就至少得要一万人。这已经是很乐观的估计了，假如效应值是1%（实际情况很可能更小），那样本数就得要四万了。需要这么大的样本的原因和分析投篮数据时是一样的——二项分布难以估计准确。所以这项研究的问题与假设检验无关，改用贝叶斯也救不回来，这个研究想法出生的那刻就已经被宣判死刑了。</p>
 
-<p>现在你知道通过直觉判断效力有多容易出错了吗？这也是效力计算为何如此重要的原因。对于那些复杂的实验，可能没办法从数学上进行计算，那可以先在已知数据上进行验证，例如用电脑生成的手热数据去验证GVT的统计方法。我这里还有两个特别有趣的例子，一个是关于功能性磁共振成像(fMRI)的。你应该读过一些科学家一边让被试做某类事情一边用fMRI扫被试大脑，然后得出XX脑区负责XX行为的研究。09年的时候有人想这玩意到底可不可靠啊，于是他们就用fMRI去扫描了一条三文鱼的大脑，结果发现了信号，好像没什么不对？可是，他们扫的是一条死三文鱼啊<a href="#bennett2009neural"><sup>34</sup></a>（这项研究众望所归地<a href="https://blogs.scientificamerican.com/scicurious-brain/ignobel-prize-in-neuroscience-the-dead-salmon-study/">拿到了</a>搞笑诺贝尔奖）。同年还有另外两篇论文指出当时fMRI实践中大量存在的几个统计问题<a href="#vul2009puzzlingly"><sup>35,36</sup></a>，自那以后大部分研究者都<a href="http://www.culturalcognition.net/blog/2013/4/30/deja-voodoo-the-puzzling-reemergence-of-invalid-neuroscience.html">提高了</a>警惕，整个领域发展的更健康了（至少比心理学好）。而就在今年，有人把神经科学中常用的一些研究方法应用到红白机处理器上去，想看看这些方法到底能不能帮助我们理解一个信息处理系统，结果不能算特别乐观<a href="#jonas2017could"><sup>37</sup></a>。这篇文章太新了，结论可以再讨论，不过这个研究想法是非常好的。</p>
+<p>现在你知道通过直觉判断效力有多容易出错了吗？这也是效力计算为何如此重要的原因。对于那些复杂的实验，可能没办法从数学上进行计算，那可以先在已知数据上进行验证，例如用电脑生成的手热数据去验证GVT的统计方法。我这里还有两个特别有趣的例子，一个是关于功能性磁共振成像(fMRI)的。你应该读过一些科学家一边让被试做某类事情一边用fMRI扫被试大脑，然后得出XX脑区负责XX行为的研究。09年的时候有人想这玩意到底可不可靠啊，于是他们就用fMRI去扫描了一条三文鱼的大脑，结果发现了信号，好像没什么不对？可是，他们扫的是一条死三文鱼啊<a href="#bennett2009neural"><sup>40</sup></a>（这项研究众望所归地<a href="https://blogs.scientificamerican.com/scicurious-brain/ignobel-prize-in-neuroscience-the-dead-salmon-study/">拿到了</a>搞笑诺贝尔奖）。同年还有另外两篇论文指出当时fMRI实践中大量存在的几个统计问题<a href="#vul2009puzzlingly"><sup>41,42</sup></a>，自那以后大部分研究者都<a href="http://www.culturalcognition.net/blog/2013/4/30/deja-voodoo-the-puzzling-reemergence-of-invalid-neuroscience.html">提高了</a>警惕，整个领域发展的更健康了（至少比心理学好）。而就在今年，有人把神经科学中常用的一些研究方法应用到红白机处理器上去，想看看这些方法到底能不能帮助我们理解一个信息处理系统，结果不能算特别乐观<a href="#jonas2017could"><sup>43</sup></a>。这篇文章太新了，结论可以再讨论，不过这个研究想法是非常好的。</p>
 
 <h4>和物理学的比较</h4>
 
-<p>在说了那么多假设检验的坏话后，有两个问题是无法回避的：其他学科，包括物理学，也有使用假设检验，为什么没这么多问题？假设检验在它的提出者手里为什么表现的挺好，不然后来也不会被这么广泛地使用？这是两个好问题，通过对比成功范例可以让我们更好地理解心理学里的假设检验到底哪出了问题，以及为什么这种问题更多的是因为使用上、而不是理论上的错误<a href="#gelman2013commentary"><sup>38,39</sup></a>。</p>
+<p>在说了那么多假设检验的坏话后，有两个问题是无法回避的：其他学科，包括物理学，也有使用假设检验，为什么没这么多问题？假设检验在它的提出者手里为什么表现的挺好，不然后来也不会被这么广泛地使用？这是两个好问题，通过对比成功范例可以让我们更好地理解心理学里的假设检验到底哪出了问题，以及为什么这种问题更多的是因为使用上、而不是理论上的错误<a href="#gelman2013commentary"><sup>44,45</sup></a>。</p>
 
-<p>粒子物理学里也使用假设检验，虽然他们往往不说p值，而说几个标准差，但是一个意思，那为什么希格斯粒子的发现就显得那么可靠？首先，他们使用的p值很小。发现新粒子的黄金标准是5个标准差，对应的p值大概是三百万分之一。这还是开新闻发布会时候的数字，等写成论文发表的时候ATLAS的数据已经达到5.9个标准差，对应的p值是\(1.7*10^{-9}\)<a href="#aad2012observation"><sup>40</sup></a>。</p>
+<p>粒子物理学里也使用假设检验，虽然他们往往不说p值，而说几个标准差，但是一个意思，那为什么希格斯粒子的发现就显得那么可靠？首先，他们使用的p值很小。发现新粒子的黄金标准是5个标准差，对应的p值大概是三百万分之一。这还是开新闻发布会时候的数字，等写成论文发表的时候ATLAS的数据已经达到5.9个标准差，对应的p值是\(1.7*10^{-9}\)<a href="#aad2012observation"><sup>46</sup></a>。</p>
 
-<p>其次，物理学的原假设是很强的，希格斯粒子不存在是个完全有可能的假设，需要很强的数据才能否定它，所以当它真的被否定时，对互补假设是强大的支持。心理学则完全不是这样。心理学里最常见的零假设是X和Y没有关系（相关=0），或者稍微强一点的也就是X对Y的效应是正的（或者负的），否定这样一个假设你得到的结论也不过是X和Y有关系，至于多大的关系、重要吗，则完全无法回答。而考虑到心理学中各因素的普遍联系，X和Y没有关系几乎是一个必然错误的假设，所以推翻它毫无意义。经期跟投票倾向有关吗？当然有关啊，而且不仅经期有关，你的身高体重鞋码三围无名指长度姓名首字母织毛衣的技巧……都会有关好吗？只不过有些相关太小了需要极大的样本才能检测出来，Paul Meehl曾经分析过一个有45个变量、包含57000个明尼苏达高中生资料的数据集，计算了所有变量的两两关系，结果其中92%是显著的，71%的p值小于\(10^{-6}\)<a href="#meehl1990summaries"><sup>41</sup></a>，所以有人说假设检验本质上是对于样本数的检验，就是这个意思。这种弱检验导致了心理学和物理学的一个重要区别：随着测量手段的进步，物理学里否定一个假设越来越难了，从而得到的结论也越来越可靠；而心理学里否定零假设却越来越容易了，你放眼望去哪都是效应，整个学科却没什么进展。这个方法论上的区别最早还是由Meehl注意到的，所以也被称作<a href="http://andrewgelman.com/2015/03/23/paul-meehl-continues-boss/#comment-214488">Meehl's paradox</a><a href="#meehl1978theoretical"><sup>14,42,43</sup></a>。</p>
+<p>其次，物理学的原假设是很强的，希格斯粒子不存在是个完全有可能的假设，需要很强的数据才能否定它，所以当它真的被否定时，对互补假设是强大的支持。心理学则完全不是这样。心理学里最常见的零假设是X和Y没有关系（相关=0），或者稍微强一点的也就是X对Y的效应是正的（或者负的），否定这样一个假设你得到的结论也不过是X和Y有关系，至于多大的关系、重要吗，则完全无法回答。而考虑到心理学中各因素的普遍联系，X和Y没有关系几乎是一个必然错误的假设，所以推翻它毫无意义。经期跟投票倾向有关吗？当然有关啊，而且不仅经期有关，你的身高体重鞋码三围无名指长度姓名首字母织毛衣的技巧……都会有关好吗？只不过有些相关太小了需要极大的样本才能检测出来，Paul Meehl曾经分析过一个有45个变量、包含57000个明尼苏达高中生资料的数据集，计算了所有变量的两两关系，结果其中92%是显著的，71%的p值小于\(10^{-6}\)<a href="#meehl1990summaries"><sup>47</sup></a>，所以有人说假设检验本质上是对于样本数的检验，就是这个意思。这种弱检验导致了心理学和物理学的一个重要区别：随着测量手段的进步，物理学里否定一个假设越来越难了，从而得到的结论也越来越可靠；而心理学里否定零假设却越来越容易了，你放眼望去哪都是效应，整个学科却没什么进展。这个方法论上的区别最早还是由Meehl注意到的，所以也被称作<a href="http://andrewgelman.com/2015/03/23/paul-meehl-continues-boss/#comment-214488">Meehl's paradox</a><a href="#meehl1978theoretical"><sup>14,48,49</sup></a>。</p>
 
-<p>最后，物理学从理论假设到实验数据的链条紧实，实验数据可以很有效地作用在理论上。什么意思呢？当一个理论对现实做出预测时，它往往需要涉及一些辅助假设，举例来说，从长得好看的人多生女孩有进化优势（理论假设）推出在Add Health数据集中最美的一档会比其他人多生女孩（观测）时，我们暗中引入了许多辅助假设，比如好看的女性往往也嫁给社会地位高的男性，假如好看女性的基因会让她多生女孩，那成功男性的基因会不会导致多生男孩呢？Add Health的数据有代表性吗？对外貌的评分准确吗？Kanazawa使用的是第三次回访的数据，这数据有什么系统性偏差吗？……只有当这许多假设都成立的时候我们才能从理论推出预期的观测结果，反过来说，如果我们没观察到预期结果，也不意味着理论一定错了，因为也可能是辅助假设错了（这点后文还会进一步讨论）。所以如果整个逻辑链条过于松垮，实验对理论的验证效果就很弱。物理学中的推理当然也需要辅助假设，例如从希格斯粒子的存在到监视器上的信号，中间你至少需要一套关于加速器正确运作的假设。但物理学中的辅助假设常常可以被单独验证，比如LHC开机后，做的第一件事不是寻找希格斯粒子，而是先跑一组已知结果的实验，看看能不能重复出来（对LHC发现希格斯粒子的整个过程，《<a href="https://movie.douban.com/subject/3569996/">粒子狂热</a>》是一部不错的纪录片）。这也顺便回答了本节开头的第二个问题：为什么假设检验在它的提出者手里应用的不错？首先，不管是费雪、内曼还是皮尔逊，他们要是看到今天心理学家对假设检验的使用都绝对会气得晕过去，他们在提出这套方法时都特意强调了它的局限和问题；其次，费雪当时研究的是农业产量问题，理论（施肥会带来产量增长）到观测（那块施了肥的地玉米确实长得比较多）几乎零距离，只要效力足够，假设检验用起来完全没问题<a href="#fiskesocial"><sup>44</sup></a>。</p>
+<p>最后，物理学从理论假设到实验数据的链条紧实，实验数据可以很有效地作用在理论上。什么意思呢？当一个理论对现实做出预测时，它往往需要涉及一些辅助假设，举例来说，从长得好看的人多生女孩有进化优势（理论假设）推出在Add Health数据集中最美的一档会比其他人多生女孩（观测）时，我们暗中引入了许多辅助假设，比如好看的女性往往也嫁给社会地位高的男性，假如好看女性的基因会让她多生女孩，那成功男性的基因会不会导致多生男孩呢？Add Health的数据有代表性吗？对外貌的评分准确吗？Kanazawa使用的是第三次回访的数据，这数据有什么系统性偏差吗？……只有当这许多假设都成立的时候我们才能从理论推出预期的观测结果，反过来说，如果我们没观察到预期结果，也不意味着理论一定错了，因为也可能是辅助假设错了（这点后文还会进一步讨论）。所以如果整个逻辑链条过于松垮，实验对理论的验证效果就很弱。物理学中的推理当然也需要辅助假设，例如从希格斯粒子的存在到监视器上的信号，中间你至少需要一套关于加速器正确运作的假设。但物理学中的辅助假设常常可以被单独验证，比如LHC开机后，做的第一件事不是寻找希格斯粒子，而是先跑一组已知结果的实验，看看能不能重复出来（对LHC发现希格斯粒子的整个过程，《<a href="https://movie.douban.com/subject/3569996/">粒子狂热</a>》是一部不错的纪录片）。这也顺便回答了本节开头的第二个问题：为什么假设检验在它的提出者手里应用的不错？首先，不管是费雪、内曼还是皮尔逊，他们要是看到今天心理学家对假设检验的使用都绝对会气得晕过去<a href="#gigerenzer2004mindless"><sup>17</sup></a>，他们在提出这套方法时都特意强调了它的局限和问题；其次，费雪当时研究的是农业产量问题，理论（施肥会带来产量增长）到观测（那块施了肥的地玉米确实长得比较多）几乎零距离，只要效力足够，假设检验用起来是没什么问题的<a href="#fiskesocial"><sup>50</sup></a>。</p>
 
 <h4>抽屉效应/发表偏见</h4>
 
-<p>理论上，抽屉效应指的是因为期刊喜欢发表新发现，所以一个没得到显著性的研究会被锁在抽屉里，没有机会发表，从而你在期刊上看到的都是正面结果。抽屉效应确实是发表偏见的结果，但我不同意很多人因此把二者混为一谈，进一步的区分是有意义的。现实中，心理学的发表偏见不仅仅是不发表没有得到显著性的论文，如果只是这样，那倒也还好，毕竟有着研究者自由度，躺在抽屉里的文章其实不会太多。糟糕的是它们还不喜欢发表重复实验。心理学家极少重复前人的实验<a href="#makel2012replications"><sup>45</sup></a>，直接重复就更少了，他们偏好间接重复(conceptual replication)，也就是把原始实验改来改去，理论上相符就好。这一恶习甚至连费曼都注意到了。</p>
+<p>理论上，抽屉效应指的是因为期刊喜欢发表新发现，所以一个没得到显著性的研究会被锁在抽屉里，没有机会发表，从而你在期刊上看到的都是正面结果。抽屉效应确实是发表偏见的结果，但我不同意很多人因此把二者混为一谈，进一步的区分是有意义的。现实中，心理学的发表偏见不仅仅是不发表没有得到显著性的论文，如果只是这样，那倒也还好，毕竟有着研究者自由度，躺在抽屉里的文章其实不会太多。糟糕的是它们还不喜欢发表重复实验。心理学家极少重复前人的实验<a href="#makel2012replications"><sup>51</sup></a>，直接重复就更少了，他们偏好间接重复(conceptual replication)，也就是把原始实验改来改去，理论上相符就好。这一恶习甚至连费曼都注意到了。</p>
 <img src="/assets/images/conceptual_replication.png">
 <h4>错误链式反应</h4>
 
@@ -289,7 +289,7 @@ $$0.02 > 2 * 0.5 * \sqrt{2/n} \Rightarrow n > 5000 $$
 </ol>
 这似乎就是发生在social priming领域的事（最早的那篇Bargh的论文样本数是30……），不然你很难解释卡尼曼怎么会那么信誓旦旦。这个领域中不乏正直的人，仅仅用发表压力下的学术不端解释不了这样大规模的错误，只能说大家是真的相信。
 </p>
-<p>这个模型并不是我的首创，again，Meehl1967年就提出了类似的看法<a href="#meehl1967theory"><sup>42</sup></a>。这真的让人觉得很奇怪，Meehl在心理学界<a href="/assets/images/Paul_Meehl.png">备受尊重</a>，所有人都知道他，他60年代写的一系列批评假设检验的文章也很多人读，但就是<a href="http://andrewgelman.com/2015/03/23/paul-meehl-continues-boss/">没人听</a>，几十年过去了整个学科还是老样子。到了90年代，Meehl自己都受不了了，又写了好几篇文章，其中有一篇无奈地说道<a href="#meehl1990appraising"><sup>46</sup></a>：</p>
+<p>这个模型并不是我的首创，again，Meehl1967年就提出了类似的看法<a href="#meehl1967theory"><sup>48</sup></a>。这真的让人觉得很奇怪，Meehl在心理学界<a href="/assets/images/Paul_Meehl.png">备受尊重</a>，所有人都知道他，他60年代写的一系列批评假设检验的文章也很多人读，但就是<a href="http://andrewgelman.com/2015/03/23/paul-meehl-continues-boss/">没人听</a>，几十年过去了整个学科还是老样子。到了90年代，Meehl自己都受不了了，又写了好几篇文章，其中有一篇无奈地说道<a href="#meehl1990appraising"><sup>52</sup></a>：</p>
 
 <blockquote>Ten years later, I wrote at greater length along similar lines (Meehl, 1978); but, despite my having received more than 1,000 reprint requests for that article in the first year after its appearance, I cannot discern that it had more impact on research habits in soft psychology than did Morrison and Henkel. Our graduate students typically plan and write their doctoral dissertations in blissful ignorance that “the significance test controversy” even exists, or could have a bearing on their research problems. This article (see also Meehl, 1990c) is my final attempt to call attention to a methodological problem of our field that I insist is not minor but of grave import.</blockquote>
 
@@ -310,7 +310,7 @@ $$0.02 > 2 * 0.5 * \sqrt{2/n} \Rightarrow n > 5000 $$
     <img src="/assets/images/lakatosian_5.png">
     <figcaption>大卫·巴斯把整个第二章都贡献给了方法论，这在外国教材中很常见，而在中国人写的书里你基本看不到。就如辉格<a href="http://headsalon.org/archives/526.html">指出过</a>的，中国人最需要普及的不是科学知识，而是科学哲学。</figcaption>
 </figure>
-<p>熟悉科学哲学的朋友一眼就能看出这套“硬核-保护带-具体假设”的模型正是拉卡托斯的理论，不过可能为了减轻学生负担，巴斯把拉卡托斯的名字藏到了最后引用的文献里（那篇论文的题目叫<em>Are evolutionary explanations unfalsifiable? Evolutionary psychology and the Lakatosian philosophy of science</em>）。
+<p>熟悉科学哲学的朋友一眼就能看出这套“硬核-保护带-具体假设”的模型正是拉卡托斯的理论，不过可能为了减轻学生负担，巴斯把拉卡托斯的名字藏到了最后引用的文献里（那篇论文的题目叫<em>Are evolutionary explanations unfalsifiable? Evolutionary psychology and the Lakatosian philosophy of science.</em>）。
 </p>
 
 <p>通过拉卡托斯的框架可以很好地消化这次危机。经过这次危机，我的认知结构里关于心理学的许多具体假设完全改变了，一部分中级理论节点进行了适当更新，至于硬核……谁会怀疑进化论呢？但显然不是每个人都像我这样。</p>
@@ -330,11 +330,11 @@ $$0.02 > 2 * 0.5 * \sqrt{2/n} \Rightarrow n > 5000 $$
 
 <p>你应该已经看出一个层次化的认知模型有多重要，否则稍不注意就不知道滑到哪里去了。但这自然带来了一个疑问，我们之前刚刚批评过心理学中从理论到观测的链条太过松垮，拉卡托斯的这个模型难道不也是这样吗？我的回答是这样的：辅助假设是不可避免的，你应该让它尽量的紧实（就像物理学中那样），但如果你拉得太过头，赋予了它多于事实能支撑的强度，那整个结构又会牵一发而动全身，也是不行的。至于怎么样的强度算恰当，这就取决于你的学术品味了。品味这东西一两句也说不清，我只能尽力而为，一方面我可以给你<a href="https://book.douban.com/people/whigzhou/collect?sort=rating&start=0&mode=grid&tags_sort=count">推荐</a>一些<a href="https://book.douban.com/people/tcya/collect?sort=rating&start=0&mode=grid&tags_sort=count">比较好</a>的书，品味都是<a href="http://headsalon.org/archives/6935.html">多吃好东西培养出来的</a>；另一方面我可以提供一些拇指法则，尽量帮你避开一些坑：
 <ul>
-    <li>假如你对一项研究没把握，请假设它是错的<a href="#ioannidis2005most"><sup>47,48</sup></a>；</li>
-    <li>或者至少假设它的结论是严重高估的<a href="#gelman2014beyond"><sup>25</sup></a>；</li>
+    <li>假如你对一项研究没把握，请假设它是错的<a href="#ioannidis2005most"><sup>53,54</sup></a>；</li>
+    <li>或者至少假设它的结论是严重高估的<a href="#gelman2014beyond"><sup>30</sup></a>；</li>
     <li>如果一篇论文没有任何描述性统计的图，而全是假设检验的表，这是一个危险信号；如果只报告p值，完全没提效应值和置信区间，这是一个危险信号；如果使用了一堆假设检验却完全没有效力分析，这是一个危险信号；如果一篇文章有两个危险信号，你最好还是把它扔到垃圾桶去；</li>
     <li>除非你特别特别感兴趣，社会启动效应和具身认知的东西先不要看了；</li>
-    <li>如果你对<a href="http://freakonomics.com/">魔鬼经济学</a>或<a href="https://en.wikipedia.org/wiki/Malcolm_Gladwell">格拉德威尔</a>深信不疑，那你对心理学的信任<a href="http://andrewgelman.com/?s=freakonomics">太</a>高<a href="http://www.nytimes.com/2009/11/15/books/review/Pinker-t.html?pagewanted=all">了</a><a href="#gelman2012freakonomics"><sup>49</sup></a>；</li>
+    <li>如果你对<a href="http://freakonomics.com/">魔鬼经济学</a>或<a href="https://en.wikipedia.org/wiki/Malcolm_Gladwell">格拉德威尔</a>深信不疑，那你对心理学的信任<a href="http://andrewgelman.com/?s=freakonomics">太</a>高<a href="http://www.nytimes.com/2009/11/15/books/review/Pinker-t.html?pagewanted=all">了</a><a href="#gelman2012freakonomics"><sup>55</sup></a>；</li>
     <li>……</li>
 </ul></p>
 
@@ -371,39 +371,45 @@ $$0.02 > 2 * 0.5 * \sqrt{2/n} \Rightarrow n > 5000 $$
 <li><span id="Cohen1993">13.Cohen, J. The Earth Is Round (p &lt; .05). <i>American Psychologist</i> 997–1003 (1993).</span></li>
 <li><span id="meehl1978theoretical">14.Meehl, P. E. Theoretical risks and tabular asterisks: Sir Karl, Sir Ronald, and the slow progress of soft psychology. <i>Journal of consulting and clinical Psychology</i> <b>46,</b> 806 (1978).</span></li>
 <li><span id="greenland2016statistical">15.Greenland, S. <i>et al.</i> Statistical tests, P values, confidence intervals, and power: a guide to misinterpretations. <i>European journal of epidemiology</i> <b>31,</b> 337–350 (2016).</span></li>
-<li><span id="wasserstein2016asa">16.Wasserstein, R. L. &amp; Lazar, N. A. The ASA’s statement on p-values: context, process, and purpose. (2016).</span></li>
-<li><span id="gelman2013garden">17.Gelman, A. &amp; Loken, E. The garden of forking paths: Why multiple comparisons can be a problem, even when there is no “fishing expedition” or “p-hacking” and the research hypothesis was posited ahead of time. <i>Department of Statistics, Columbia University</i> (2013).</span></li>
-<li><span id="petersen2013ancestral">18.Petersen, M. B., Sznycer, D., Sell, A., Cosmides, L. &amp; Tooby, J. The ancestral logic of politics: Upper-body strength regulates men’s assertion of self-interest over economic redistribution. <i>Psychological Science</i> <b>24,</b> 1098–1103 (2013).</span></li>
-<li><span id="gelman2016problems">19.Gelman, A. The problems with p-values are not just with p-values. <i>The American Statistician, supplemental material to the ASA statement on p-values and statistical significance</i> <b>10,</b> 1154108 (2016).</span></li>
-<li><span id="young2011deming">20.Young, S. S. &amp; Karr, A. Deming, data and observational studies. <i>Significance</i> <b>8,</b> 116–120 (2011).</span></li>
-<li><span id="simmons2011false">21.Simmons, J. P., Nelson, L. D. &amp; Simonsohn, U. False-positive psychology: Undisclosed flexibility in data collection and analysis allows presenting anything as significant. <i>Psychological science</i> <b>22,</b> 1359–1366 (2011).</span></li>
-<li><span id="gelman2012we">22.Gelman, A., Hill, J. &amp; Yajima, M. Why we (usually) don’t have to worry about multiple comparisons. <i>Journal of Research on Educational Effectiveness</i> <b>5,</b> 189–211 (2012).</span></li>
-<li><span id="durante2013fluctuating">23.Durante, K. M., Rae, A. &amp; Griskevicius, V. The fluctuating female vote: Politics, religion, and the ovulatory cycle. <i>Psychological Science</i> <b>24,</b> 1007–1016 (2013).</span></li>
-<li><span id="cumming2014new">24.Cumming, G. The new statistics: Why and how. <i>Psychological science</i> <b>25,</b> 7–29 (2014).</span></li>
-<li><span id="gelman2014beyond">25.Gelman, A. &amp; Carlin, J. Beyond power calculations: Assessing Type S (sign) and Type M (magnitude) errors. <i>Perspectives on Psychological Science</i> <b>9,</b> 641–651 (2014).</span></li>
-<li><span id="button2013power">26.Button, K. S. <i>et al.</i> Power failure: why small sample size undermines the reliability of neuroscience. <i>Nature Reviews Neuroscience</i> <b>14,</b> 365–376 (2013).</span></li>
-<li><span id="ioannidis2016power">27.Ioannidis, J. P. A., Stanley, T. D. &amp; Doucouliagos, H. The power of bias in economics research. <i>The Economic Journal, forthcoming, SWP, Economics Series</i> <b>1,</b> (2016).</span></li>
-<li><span id="cohen1962statistical">28.Cohen, J. The statistical power of abnormal-social psychological research: a review. <i>The Journal of Abnormal and Social Psychology</i> <b>65,</b> 145 (1962).</span></li>
-<li><span id="sedlmeier1989studies">29.Sedlmeier, P. &amp; Gigerenzer, G. Do studies of statistical power have an effect on the power of studies? <i>Psychological bulletin</i> <b>105,</b> 309 (1989).</span></li>
-<li><span id="tversky1971belief">30.Tversky, A. &amp; Kahneman, D. Belief in the law of small numbers. <i>Psychological bulletin</i> <b>76,</b> 105 (1971).</span></li>
-<li><span id="denny2007big">31.Denny, K. Big and tall parents do not have more sons. (2007).</span></li>
-<li><span id="gelman2007letter">32.Gelman, A. Letter to the editors regarding some papers of Dr. Satoshi Kanazawa. <i>Journal of Theoretical Biology</i> <b>245,</b> 597–599 (2007).</span></li>
-<li><span id="gelman2009beauty">33.Gelman, A. &amp; Weakliem, D. Of beauty, sex and power: Too little attention has been paid to the statistical challenges in estimating small effects. <i>American Scientist</i> <b>97,</b> 310–316 (2009).</span></li>
-<li><span id="bennett2009neural">34.Bennett, C. M., Miller, M. B. &amp; Wolford, G. L. Neural correlates of interspecies perspective taking in the post-mortem Atlantic Salmon: An argument for multiple comparisons correction. <i>Neuroimage</i> <b>47,</b> S125 (2009).</span></li>
-<li><span id="vul2009puzzlingly">35.Vul, E., Harris, C., Winkielman, P. &amp; Pashler, H. Puzzlingly high correlations in fMRI studies of emotion, personality, and social cognition. <i>Perspectives on psychological science</i> <b>4,</b> 274–290 (2009).</span></li>
-<li><span id="kriegeskorte2009circular">36.Kriegeskorte, N., Simmons, W. K., Bellgowan, P. S. F. &amp; Baker, C. I. Circular analysis in systems neuroscience: the dangers of double dipping. <i>Nature neuroscience</i> <b>12,</b> 535–540 (2009).</span></li>
-<li><span id="jonas2017could">37.Jonas, E. &amp; Kording, K. P. Could a neuroscientist understand a microprocessor? <i>PLoS computational biology</i> <b>13,</b> e1005268 (2017).</span></li>
-<li><span id="gelman2013commentary">38.Gelman, A. Commentary: P values and statistical practice. <i>Epidemiology</i> <b>24,</b> 69–72 (2013).</span></li>
-<li><span id="gelman2013problem">39.Gelman, A. The problem with p-values is how they’re used. <i>Ecology. Online: http://www.stat.columbia.edu/gelman/research/unpublished/murtaugh2.pdf</i> (2013).</span></li>
-<li><span id="aad2012observation">40.Aad, G. <i>et al.</i> Observation of a new particle in the search for the Standard Model Higgs boson with the ATLAS detector at the LHC. <i>Physics Letters B</i> <b>716,</b> 1–29 (2012).</span></li>
-<li><span id="meehl1990summaries">41.Meehl, P. E. Why summaries of research on psychological theories are often uninterpretable. <i>Psychological reports</i> <b>66,</b> 195–244 (1990).</span></li>
-<li><span id="meehl1967theory">42.Meehl, P. E. Theory-testing in psychology and physics: A methodological paradox. <i>Philosophy of science</i> <b>34,</b> 103–115 (1967).</span></li>
-<li><span id="meehl1997problem">43.Meehl, P. E. The problem is epistemology, not statistics: Replace significance tests by confidence intervals and quantify accuracy of risky numerical predictions. (1997).</span></li>
-<li><span id="fiskesocial">44.Meehl, P. E. What Social Scientists Don’t Understand.</span></li>
-<li><span id="makel2012replications">45.Makel, M. C., Plucker, J. A. &amp; Hegarty, B. Replications in psychology research: How often do they really occur? <i>Perspectives on Psychological Science</i> <b>7,</b> 537–542 (2012).</span></li>
-<li><span id="meehl1990appraising">46.Meehl, P. E. Appraising and amending theories: The strategy of Lakatosian defense and two principles that warrant it. <i>Psychological Inquiry</i> <b>1,</b> 108–141 (1990).</span></li>
-<li><span id="ioannidis2005most">47.Ioannidis, J. P. A. Why most published research findings are false. <i>PLoS medicine</i> <b>2,</b> e124 (2005).</span></li>
-<li><span id="siegfried2010odds">48.Siegfried, T. Odds are, it’s wrong: Science fails to face the shortcomings of statistics. <i>Science news</i> <b>177,</b> 26–29 (2010).</span></li>
-<li><span id="gelman2012freakonomics">49.Gelman, A. &amp; Fung, K. Freakonomics: What Went Wrong? <i>American Scientist</i> <b>100,</b> 6 (2012).</span></li></ol>
+<li><span id="haller2002misinterpretations">16.Haller, H. &amp; Krauss, S. Misinterpretations of significance: A problem students share with their teachers. <i>Methods of Psychological Research</i> <b>7,</b> 1–20 (2002).</span></li>
+<li><span id="gigerenzer2004mindless">17.Gigerenzer, G. Mindless statistics. <i>The Journal of Socio-Economics</i> <b>33,</b> 587–606 (2004).</span></li>
+<li><span id="wasserstein2016asa">18.Wasserstein, R. L. &amp; Lazar, N. A. The ASA’s statement on p-values: context, process, and purpose. (2016).</span></li>
+<li><span id="cumming2014new">19.Cumming, G. The new statistics: Why and how. <i>Psychological science</i> <b>25,</b> 7–29 (2014).</span></li>
+<li><span id="dienes2017redefine">20.Benjamin, D. J., Berger, J. O. &amp; others. Redefine statistical significance. <i>Nature Human Behaviour</i> (2017).</span></li>
+<li><span id="amrhein2017remove">21.Amrhein, V. &amp; Greenland, S. Remove, rather than redefine, statistical significance. <i>Nature Human Behaviour</i> (2017).</span></li>
+<li><span id="lakens2017justify">22.Lakens, D. <i>et al.</i> Justify Your Alpha: A Response to “Redefine Statistical Significance.” (2017).</span></li>
+<li><span id="gelman2013garden">23.Gelman, A. &amp; Loken, E. The garden of forking paths: Why multiple comparisons can be a problem, even when there is no “fishing expedition” or “p-hacking” and the research hypothesis was posited ahead of time. <i>Department of Statistics, Columbia University</i> (2013).</span></li>
+<li><span id="petersen2013ancestral">24.Petersen, M. B., Sznycer, D., Sell, A., Cosmides, L. &amp; Tooby, J. The ancestral logic of politics: Upper-body strength regulates men’s assertion of self-interest over economic redistribution. <i>Psychological Science</i> <b>24,</b> 1098–1103 (2013).</span></li>
+<li><span id="gelman2016problems">25.Gelman, A. The problems with p-values are not just with p-values. <i>The American Statistician, supplemental material to the ASA statement on p-values and statistical significance</i> <b>10,</b> 1154108 (2016).</span></li>
+<li><span id="young2011deming">26.Young, S. S. &amp; Karr, A. Deming, data and observational studies. <i>Significance</i> <b>8,</b> 116–120 (2011).</span></li>
+<li><span id="simmons2011false">27.Simmons, J. P., Nelson, L. D. &amp; Simonsohn, U. False-positive psychology: Undisclosed flexibility in data collection and analysis allows presenting anything as significant. <i>Psychological science</i> <b>22,</b> 1359–1366 (2011).</span></li>
+<li><span id="gelman2012we">28.Gelman, A., Hill, J. &amp; Yajima, M. Why we (usually) don’t have to worry about multiple comparisons. <i>Journal of Research on Educational Effectiveness</i> <b>5,</b> 189–211 (2012).</span></li>
+<li><span id="durante2013fluctuating">29.Durante, K. M., Rae, A. &amp; Griskevicius, V. The fluctuating female vote: Politics, religion, and the ovulatory cycle. <i>Psychological Science</i> <b>24,</b> 1007–1016 (2013).</span></li>
+<li><span id="gelman2014beyond">30.Gelman, A. &amp; Carlin, J. Beyond power calculations: Assessing Type S (sign) and Type M (magnitude) errors. <i>Perspectives on Psychological Science</i> <b>9,</b> 641–651 (2014).</span></li>
+<li><span id="button2013power">31.Button, K. S. <i>et al.</i> Power failure: why small sample size undermines the reliability of neuroscience. <i>Nature Reviews Neuroscience</i> <b>14,</b> 365–376 (2013).</span></li>
+<li><span id="ioannidis2016power">32.Ioannidis, J. P. A., Stanley, T. D. &amp; Doucouliagos, H. The power of bias in economics research. <i>The Economic Journal, forthcoming, SWP, Economics Series</i> <b>1,</b> (2016).</span></li>
+<li><span id="cohen1962statistical">33.Cohen, J. The statistical power of abnormal-social psychological research: a review. <i>The Journal of Abnormal and Social Psychology</i> <b>65,</b> 145 (1962).</span></li>
+<li><span id="sedlmeier1989studies">34.Sedlmeier, P. &amp; Gigerenzer, G. Do studies of statistical power have an effect on the power of studies? <i>Psychological bulletin</i> <b>105,</b> 309 (1989).</span></li>
+<li><span id="nord2017power">35.Nord, C. L., Valton, V., Wood, J. &amp; Roiser, J. P. Power-up: A Reanalysis of’Power Failure’in Neuroscience Using Mixture Modeling. <i>Journal of Neuroscience</i> <b>37,</b> 8051–8061 (2017).</span></li>
+<li><span id="tversky1971belief">36.Tversky, A. &amp; Kahneman, D. Belief in the law of small numbers. <i>Psychological bulletin</i> <b>76,</b> 105 (1971).</span></li>
+<li><span id="denny2007big">37.Denny, K. Big and tall parents do not have more sons. (2007).</span></li>
+<li><span id="gelman2007letter">38.Gelman, A. Letter to the editors regarding some papers of Dr. Satoshi Kanazawa. <i>Journal of Theoretical Biology</i> <b>245,</b> 597–599 (2007).</span></li>
+<li><span id="gelman2009beauty">39.Gelman, A. &amp; Weakliem, D. Of beauty, sex and power: Too little attention has been paid to the statistical challenges in estimating small effects. <i>American Scientist</i> <b>97,</b> 310–316 (2009).</span></li>
+<li><span id="bennett2009neural">40.Bennett, C. M., Miller, M. B. &amp; Wolford, G. L. Neural correlates of interspecies perspective taking in the post-mortem Atlantic Salmon: An argument for multiple comparisons correction. <i>Neuroimage</i> <b>47,</b> S125 (2009).</span></li>
+<li><span id="vul2009puzzlingly">41.Vul, E., Harris, C., Winkielman, P. &amp; Pashler, H. Puzzlingly high correlations in fMRI studies of emotion, personality, and social cognition. <i>Perspectives on psychological science</i> <b>4,</b> 274–290 (2009).</span></li>
+<li><span id="kriegeskorte2009circular">42.Kriegeskorte, N., Simmons, W. K., Bellgowan, P. S. F. &amp; Baker, C. I. Circular analysis in systems neuroscience: the dangers of double dipping. <i>Nature neuroscience</i> <b>12,</b> 535–540 (2009).</span></li>
+<li><span id="jonas2017could">43.Jonas, E. &amp; Kording, K. P. Could a neuroscientist understand a microprocessor? <i>PLoS computational biology</i> <b>13,</b> e1005268 (2017).</span></li>
+<li><span id="gelman2013commentary">44.Gelman, A. Commentary: P values and statistical practice. <i>Epidemiology</i> <b>24,</b> 69–72 (2013).</span></li>
+<li><span id="gelman2013problem">45.Gelman, A. The problem with p-values is how they’re used. <i>Ecology. Online: http://www.stat.columbia.edu/gelman/research/unpublished/murtaugh2.pdf</i> (2013).</span></li>
+<li><span id="aad2012observation">46.Aad, G. <i>et al.</i> Observation of a new particle in the search for the Standard Model Higgs boson with the ATLAS detector at the LHC. <i>Physics Letters B</i> <b>716,</b> 1–29 (2012).</span></li>
+<li><span id="meehl1990summaries">47.Meehl, P. E. Why summaries of research on psychological theories are often uninterpretable. <i>Psychological reports</i> <b>66,</b> 195–244 (1990).</span></li>
+<li><span id="meehl1967theory">48.Meehl, P. E. Theory-testing in psychology and physics: A methodological paradox. <i>Philosophy of science</i> <b>34,</b> 103–115 (1967).</span></li>
+<li><span id="meehl1997problem">49.Meehl, P. E. The problem is epistemology, not statistics: Replace significance tests by confidence intervals and quantify accuracy of risky numerical predictions. (1997).</span></li>
+<li><span id="fiskesocial">50.Meehl, P. E. What Social Scientists Don’t Understand.</span></li>
+<li><span id="makel2012replications">51.Makel, M. C., Plucker, J. A. &amp; Hegarty, B. Replications in psychology research: How often do they really occur? <i>Perspectives on Psychological Science</i> <b>7,</b> 537–542 (2012).</span></li>
+<li><span id="meehl1990appraising">52.Meehl, P. E. Appraising and amending theories: The strategy of Lakatosian defense and two principles that warrant it. <i>Psychological Inquiry</i> <b>1,</b> 108–141 (1990).</span></li>
+<li><span id="ioannidis2005most">53.Ioannidis, J. P. A. Why most published research findings are false. <i>PLoS medicine</i> <b>2,</b> e124 (2005).</span></li>
+<li><span id="siegfried2010odds">54.Siegfried, T. Odds are, it’s wrong: Science fails to face the shortcomings of statistics. <i>Science news</i> <b>177,</b> 26–29 (2010).</span></li>
+<li><span id="gelman2012freakonomics">55.Gelman, A. &amp; Fung, K. Freakonomics: What Went Wrong? <i>American Scientist</i> <b>100,</b> 6 (2012).</span></li></ol>
 </body>
 </html>
