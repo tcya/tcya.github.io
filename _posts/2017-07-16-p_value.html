@@ -188,7 +188,7 @@ $$corr(X, Y) = \frac{cov(X, Y)}{\sigma_X \sigma_Y} = 0.072$$
 <p>一方面其实是<a href="http://andrewgelman.com/2016/09/22/why-is-the-scientific-replication-crisis-centered-on-psychology/">因为</a>心理学比许多同样危机重重的学科更开放、关注度更高，另一方面它也确实有着自身的问题。心理学中广泛使用的p值——以及更一般的，整个假设检验范式，在这次危机中起着核心作用。越来越多人知道单纯地依赖这套范式不好，但大多数人还没意识到它到底有多糟，对此，备受尊敬的前美国心理学会会长保罗·米尔(Paul Meehl)是这么说的{%cite meehl1978theoretical%}，</p>
 <blockquote>I believe that the almost universal reliance on merely refuting the null hypothesis as the standard method for corroborating substantive theories in the soft areas is a terrible mistake, is basically unsound, poor scientific strategy, and one of the worst things that ever happened in the history of psychology.</blockquote>
 
-<p>p值带来了<a href="https://en.wikipedia.org/wiki/Misunderstandings_of_p-values">太多的误解</a>{%cite greenland2016statistical haller2002misinterpretations gigerenzer2004mindless%}，连美国统计学会都少见的出来说了几句{%cite wasserstein2016asa%}，如何改进也是众说纷纭{%cite cumming2014new dienes2017redefine amrhein2017remove lakens2017justify%}，这里是几点主要的。</p>
+<p>p值带来了<a href="https://en.wikipedia.org/wiki/Misunderstandings_of_p-values">太多的误解</a>{%cite greenland2016statistical haller2002misinterpretations gigerenzer2004mindless%}，连美国统计学会都少见的出来说了几句{%cite wasserstein2016asa%}，如何改进也是众说纷纭{%cite cumming2014new benjamin2017redefine amrhein2017remove lakens2017justify%}，这里是几点主要的。</p>
 
 <h4><a href="https://en.wikipedia.org/wiki/Confusion_of_the_inverse">Confusion of the inverse</a></h4>
 
@@ -262,7 +262,7 @@ $$0.02 > 2 * 0.5 * \sqrt{2/n} \Rightarrow n > 5000 $$
 
 <p>在说了那么多假设检验的坏话后，有两个问题是无法回避的：其他学科，包括物理学，也有使用假设检验，为什么没这么多问题？假设检验在它的提出者手里为什么表现的挺好，不然后来也不会被这么广泛地使用？这是两个好问题，通过对比成功范例可以让我们更好地理解心理学里的假设检验到底哪出了问题，以及为什么这种问题更多的是因为使用上、而不是理论上的错误{%cite gelman2013commentary gelman2013problem %}。</p>
 
-<p>粒子物理学里也使用假设检验，虽然他们往往不说p值，而说几个标准差，但是一个意思，那为什么希格斯粒子的发现就显得那么可靠？首先，他们使用的p值很小。发现新粒子的黄金标准是5个标准差，对应的p值大概是三百万分之一。这还是开新闻发布会时候的数字，等写成论文发表的时候ATLAS的数据已经达到5.9个标准差，对应的p值是\(1.7*10^{-9}\){%cite aad2012observation %}。</p>
+<p>粒子物理学里也使用假设检验，虽然他们往往不说p值，而说几个标准差，但是一个意思，那为什么希格斯粒子的发现就显得那么可靠？首先，他们使用的p值很小。发现新粒子的黄金标准是5个标准差，对应的p值大概是三百万分之一。这还是开新闻发布会时候的数字，等写成论文发表的时候ATLAS的数据已经达到5.9个标准差，对应的p值是\(1.7*10^{-9}\){%cite aad2012observation %}。相应地，最近有人就提议把社会科学的p值改为0.005作为一种临时的应对措施{%cite benjamin2017redefine amrhein2017remove  lakens2017justify%}。</p>
 
 <p>其次，物理学的原假设是很强的，希格斯粒子不存在是个完全有可能的假设，需要很强的数据才能否定它，所以当它真的被否定时，对互补假设是强大的支持。心理学则完全不是这样。心理学里最常见的零假设是X和Y没有关系（相关=0），或者稍微强一点的也就是X对Y的效应是正的（或者负的），否定这样一个假设你得到的结论也不过是X和Y有关系，至于多大的关系、重要吗，则完全无法回答。而考虑到心理学中各因素的普遍联系，X和Y没有关系几乎是一个必然错误的假设，所以推翻它毫无意义。经期跟投票倾向有关吗？当然有关啊，而且不仅经期有关，你的身高体重鞋码三围无名指长度姓名首字母织毛衣的技巧……都会有关好吗？只不过有些相关太小了需要极大的样本才能检测出来，Paul Meehl曾经分析过一个有45个变量、包含57000个明尼苏达高中生资料的数据集，计算了所有变量的两两关系，结果其中92%是显著的，71%的p值小于\(10^{-6}\){%cite meehl1990summaries %}，所以有人说假设检验本质上是对于样本数的检验，就是这个意思。这种弱检验导致了心理学和物理学的一个重要区别：随着测量手段的进步，物理学里否定一个假设越来越难了，从而得到的结论也越来越可靠；而心理学里否定零假设却越来越容易了，你放眼望去哪都是效应，整个学科却没什么进展。这个方法论上的区别最早还是由Meehl注意到的，所以也被称作<a href="http://andrewgelman.com/2015/03/23/paul-meehl-continues-boss/#comment-214488">Meehl's paradox</a>{%cite meehl1978theoretical meehl1967theory meehl1997problem%}。</p>
 
