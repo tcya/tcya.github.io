@@ -117,10 +117,10 @@
 }
 
 .sidebar {
-    width: 300px;
     padding-left: 15px;
     padding-right: 5px;
-    min-width: 300px;
+    min-width: 240px;
+    max-width: 305px;
     overflow: hidden;
 
     .sidebar-block {
@@ -138,7 +138,7 @@
 .left {
     overflow: hidden;
     float:left;
-    width: 60%;
+    width: 63%;
     min-width: 240px;
     border-right: 1px dashed lightgrey;
     padding-right: 10px;
