@@ -16,7 +16,7 @@ permalink: /about/
 
 * [微博](http://weibo.com/u/1423420791) (虽然目前还没怎么用，但先关注着吧，<s>万一哪天我要卖面膜了呢</s>)
 
-* [LinkedIn](https://www.linkedin.com/in/xunmoyang) <s>(我对目前的工作挺满意的，但如果有出任CEO的机会，还是欢迎联系我( ͡° ͜ʖ ͡°))</s>
+* [LinkedIn](https://www.linkedin.com/in/xunmoyang) <s>(我对目前的工作挺满意的，但如果有出任 CEO 的机会，还是欢迎联系我( ͡° ͜ʖ ͡°))</s>
 
 * <s>支付宝：tcya24@163.com (听说你想认识我？)</s>
 
