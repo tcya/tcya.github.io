@@ -14,7 +14,7 @@ permalink: /about/
 
 * [豆瓣](https://www.douban.com/people/tcya/) ([All my book are belong to you](https://en.wikipedia.org/wiki/All_your_base_are_belong_to_us))
 
-* [微博](http://weibo.com/u/1423420791) (虽然目前还没怎么用，但先关注着吧，<s>万一哪天我要卖面膜了呢</s>)
+* [微博](https://weibo.com/u/1423420791) (虽然目前还没怎么用，但先关注着吧，<s>万一哪天我要卖面膜了呢</s>)
 
 * [LinkedIn](https://www.linkedin.com/in/xunmoyang) <s>(我对目前的工作挺满意的，但如果有出任 CEO 的机会，还是欢迎联系我( ͡° ͜ʖ ͡°))</s>
 
