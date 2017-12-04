@@ -19,7 +19,7 @@ title:  "伪全息投影完全教程"
 <p>原理非常简单，但很不幸，百度经验上那些抄来抄去的文章全是错的。</p>
 <figure>
     <img width="400px" src="/assets/images/wrong_hologram_mechanism.png">
-    <figcaption><a href="http://jingyan.baidu.com/article/a948d6514d4bb50a2dcd2e11.html"><font color='red'>错误的</font>原理</a></figcaption>
+    <figcaption><a href="https://jingyan.baidu.com/article/a948d6514d4bb50a2dcd2e11.html"><font color='red'>错误的</font>原理</a></figcaption>
 </figure>
 <p>上图其实未必不对，但和我们做的没任何关系。我们要做的投影金字塔是不可能产生什么衍射的。它的成像其实就是靠镜面反射，金字塔的面充当着镜子的角色，让你在金字塔的中心处看到一个镜像，但用的材料又是透明的，所以这个虚像直接重叠在金字塔内部的实景上，就产生了全息的悬浮感。要验证这一点你把投影金字塔对着视频挪来挪去观察看看就知道了。如果我们再把同一个视频旋转并拼起来，使得从前后左右四个角度都能看到相同的像，就产生了360度无死角的错觉。</p>
 <figure>
@@ -32,7 +32,7 @@ title:  "伪全息投影完全教程"
     <img width="400px" width="600px"src="/assets/images/hologram_pyramid.png">
 </figure>
 <h1>视频制作</h1>
-<p>大部分网上教程就到此为止了，剩下的你自己去网上找些四面视频（大部分画面都很简单）看看玩玩也就是了。教你拿任意视频做一个四面视频的教程就少多了。当然这也没什么难的，用高级一点的视频处理软件就可以做到，这篇<a href="http://news.17173.com/content/2012-07-02/20120702150627005_all.shtml">文章</a>的后半部分介绍了怎么用会声会影来实现（前半部分介绍了怎么得到题头图那样四个方向能看到不一样像的视频，让你走到后面就能看到 miku 的屁股。但这种方法只适用于从头制作的动画，大部分视频是不适用的）。会声会影是 Windows 平台的，在 Mac 上用 iMovie 的画中画功能也可以做。但这些方法有个小问题，四个视频是靠手动对齐的，很难拼的准，虽然这对投影效果不会有太大影响，但作为强迫症的我……再一个就是麻烦，得学软件。但这些都是技术细节上的困难，另一个问题更严重。</p>
+<p>大部分网上教程就到此为止了，剩下的你自己去网上找些四面视频（大部分画面都很简单）看看玩玩也就是了。教你拿任意视频做一个四面视频的教程就少多了。当然这也没什么难的，用高级一点的视频处理软件就可以做到，这篇<a href="https://wenku.baidu.com/view/a4489eefaa00b52acfc7cab5.html">文章</a>的后半部分介绍了怎么用会声会影来实现（前半部分介绍了怎么得到题头图那样四个方向能看到不一样像的视频，让你走到后面就能看到 miku 的屁股。但这种方法只适用于从头制作的动画，大部分视频是不适用的）。会声会影是 Windows 平台的，在 Mac 上用 iMovie 的画中画功能也可以做。但这些方法有个小问题，四个视频是靠手动对齐的，很难拼的准，虽然这对投影效果不会有太大影响，但作为强迫症的我……再一个就是麻烦，得学软件。但这些都是技术细节上的困难，另一个问题更严重。</p>
 <figure>
     <img src="/assets/images/oba_BG.gif">
 </figure>
@@ -41,7 +41,7 @@ title:  "伪全息投影完全教程"
     <img src="/assets/images/oba_noBG.gif">
     <figcaption>经过处理的欧巴。虽然因为格式塔心理学上的具体化（<a href="https://en.wikipedia.org/wiki/Gestalt_psychology#Reification">Reification</a>）现象，依然能感到边框的存在，但已经好多了</figcaption>
 </figure>
-<p>当你终于抠出自己满意的视频后，最后就是把它变成四面了。如果你的视频在手机里，那应用商店搜 “hologram maker” 应该就有现成的软件。如果需要在电脑上做，我写了个程序部署在<a href="http://tcya.pythonanywhere.com/"> PythonAnywhere </a>上，你去那把视频上传并输入相应的参数就可以生成了。需要的参数有边长 Length、中心分开的距离 d 和包围视频的一圈黑色 padding 的宽度，如果你的投影设备是要放在全息金字塔的下方，那把 “Screen up” 勾上。对于ipad，我觉得 Length = 800，d = 150, padding = 10 效果就不错，你在这附近试试。手机的话没怎么试，估计 Length 得小一半吧，欢迎反馈。文件大小我限制在了100M，应该够用了，没人会用这看2小时苍井空吧。。如果嫌不够想在自己电脑上用的话代码<a href="https://github.com/tcya/pseudo-hologram-video-maker/blob/master/app.py">在这</a>，基本上保留 hologram 函数里的那部分代码即可。</p>
+<p>当你终于抠出自己满意的视频后，最后就是把它变成四面了。如果你的视频在手机里，那应用商店搜 “hologram maker” 应该就有现成的软件。如果需要在电脑上做，我写了个程序部署在<a href="https://tcya.pythonanywhere.com/"> PythonAnywhere </a>上，你去那把视频上传并输入相应的参数就可以生成了。需要的参数有边长 Length、中心分开的距离 d 和包围视频的一圈黑色 padding 的宽度，如果你的投影设备是要放在全息金字塔的下方，那把 “Screen up” 勾上。对于ipad，我觉得 Length = 800，d = 150, padding = 10 效果就不错，你在这附近试试。手机的话没怎么试，估计 Length 得小一半吧，欢迎反馈。文件大小我限制在了100M，应该够用了，没人会用这看2小时苍井空吧。。如果嫌不够想在自己电脑上用的话代码<a href="https://github.com/tcya/pseudo-hologram-video-maker/blob/master/app.py">在这</a>，基本上保留 hologram 函数里的那部分代码即可。</p>
 <figure>
     <img src="/assets/images/layout.png">
     <figcaption>输出视频的参数示意图</figcaption>

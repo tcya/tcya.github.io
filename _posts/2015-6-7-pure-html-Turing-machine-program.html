@@ -9,7 +9,7 @@ title:  HTML / CSS 的图灵完备性
 </head>
 <body>
 
-<p>这篇文章是受到 StackOverflow 上这个<a href="https://stackoverflow.com/questions/2497146/is-css-turing-complete">帖子</a>和这篇<a href="http://imsun.net/?pid=css-turing-complete">博客</a>的启发，我讨论了下 HTML + CSS 是否图灵完备和几个例子。我会简单介绍下文中需要用到的概念，已经懂的部分就跳过，不懂的可能还是得多 google。</p>
+<p>这篇文章是受到 StackOverflow 上这个<a href="https://stackoverflow.com/questions/2497146/is-css-turing-complete">帖子</a>和这篇<a href="https://imsun.net/posts/css-turing-complete/">博客</a>的启发，我讨论了下 HTML + CSS 是否图灵完备和几个例子。我会简单介绍下文中需要用到的概念，已经懂的部分就跳过，不懂的可能还是得多 google。</p>
 <!-- excerpt break -->
 
 <h2>背景知识</h2>
@@ -116,7 +116,7 @@ p.foo + * + * {color: red}
 <h3>单带图灵机</h3>
 <p>这个大家应该都略有所知，就是一条纸带一个读写头然后在那挪来挪去，纸带上写着0或1或空白 (b)，读写头可以读、写（废话）并具有一个状态，像这样：</p>
 <img src="/assets/images/turing_machine.png" alt="turing machine" width="700px">
-<p>但具体是怎么运算的呢？很简单，每个程序由一个状态表构成，这篇<a href="http://www.guokr.com/post/93138/">文章</a>给了两个简单的例子，这是一个f(x) = x + 1 的程序：</p>
+<p>但具体是怎么运算的呢？很简单，每个程序由一个状态表构成，这篇<a href="https://www.guokr.com/post/93138/">文章</a>给了两个简单的例子，这是一个f(x) = x + 1 的程序：</p>
 
 <pre>
 q1, 0, 1, l, q2;
