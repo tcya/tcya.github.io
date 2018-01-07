@@ -125,7 +125,7 @@
     overflow: hidden;
 
     .sidebar-block {
-        background: #f5f5f5;
+        background: #ECECEA;
         padding: 5px;
         margin-bottom: 10px;
         font-color: black;
@@ -239,9 +239,9 @@
 }
 
 .post-list-item {
-    background: #f5f5f5;
     padding: 10px;
     overflow: hidden;
+    border-bottom: 1px dashed lightgrey;
 }
 
 .post-meta {
