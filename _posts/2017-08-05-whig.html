@@ -122,7 +122,7 @@ d3.json("/assets/data/headsalon_roadmap.json", function(error, root) {
     node.filter(function(d){ return !d.children })
       .append("a")
       .style('fill', '#0645AD')
-      .attr("href", function(d){ return d.url })
+      .attr("xlink:href", function(d){ return d.url })
       .append("text")
       .attr("dy", function(d) {return d.children ? -5 : 5;})
       .attr("dx", function(d) {return d.right ? 10 : -10;})
