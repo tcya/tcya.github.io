@@ -12,7 +12,7 @@ title:  为什么金斯伯格反对罗诉韦德案
 
 我并不是说如果金斯伯格还活着她会一块推翻罗案。从她晚年的[访谈](https://www.law.uchicago.edu/recordings/justice-ruth-bader-ginsburg-and-geoffrey-stone-roe-40)来看，她大概会以尊重先例为由表示异议，阿利托在多数意见里也回应了这一观点，但不管怎样，它显然都与女性是否有权堕胎无关。
 
-事实上罗案是一个极富教育意义的例子，有助于人们理解和思考司法分支的角色、[法律的演化](https://headsalon.org/archives/2121.html)、[规则的层次](https://headsalon.org/archives/8230.html)等等问题。女性是否有权堕胎是它最不相关的角度，但却是人们最热衷的。
+事实上罗案是一个极富教育意义的例子，有助于人们理解和思考[司法分支的角色](https://headsalon.org/archives/4630.html)、[法律的演化](https://headsalon.org/archives/2121.html)、[规则的层次](https://headsalon.org/archives/8230.html)等等问题。女性是否有权堕胎是它最不相关的角度，但却是人们最热衷的。
 
 回顾罗案这五十年，我们能学到什么呢？是保守派法院真讨厌？还是冲在社会运动最前面的史上最进步的沃伦法院其实耽误了我们五十年的时间，让一个本可以早早解决的事情延宕至今？不同人会有不同的看法，但假如你无法理解史上最杰出的女权主义大法官为什么也反对罗诉韦德案，那你的看法有价值的概率大概等于0吧？
 
