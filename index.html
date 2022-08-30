@@ -74,7 +74,7 @@ layout: default
 
 
 <script type="text/javascript">
-var quotes = [
+let quotes = [
 '<p>更进一步说，市场让个人变得更独立、更自由，但支撑市场制度的宪政法治不是自动存续的，它需要人们努力去维护，市场社会虽然是弱共同体，但仍然是一个共同体，并且时刻面临着外部和内部的威胁，需要其成员履行维护它的义务：应召出席陪审团，以免对正义的阐释被垄断在一小撮专家手里；积极履行自卫权和参与邻里守望，以免过度依赖国家权力的保护；对政府侵蚀个人自由、走向专制的任何细微苗头保持警惕并随时予以反击；积极参加民兵组织，以免真正需要抵抗时却发现毫无还手之力；还有一项虽很遥远却最为沉重的终极义务：必要时为共同体去打仗，为它去死。</p>\
 <p>虽然人类已经摆脱了蜜蜂的命运，但这或许只是一时的幸运，并没有永久性的担保，就在过去一百多年里，我们已经历了一轮集体主义的回潮，借现代传媒之利，部落情感在民族国家的规模上得以复活，经过数十年血战才被遏制，但只要我们的蜂巢开关还在，就没人能保证它不会卷土重来。</p>\
 <p>—《<a href="https://book.douban.com/subject/27058538/">群居的艺术</a>》，辉格</p>\
@@ -156,11 +156,17 @@ var quotes = [
 <p>......</p>\
 <p>So, unless Americans can appreciate that and learn to love the separation of powers, which means learning to love the gridlock, which the Framers believed would be the main protection of minorities -- the main protection. If a bill is about to pass that really comes down hard on some minority [and] they think it‘s terribly unfair, it doesn‘t take much to throw a monkey wrench into this complex system.</p>\
 <p>So, Americans should appreciate that and they should learn to love the gridlock. It‘s there for a reason -- so that the legislation that gets out will be good legislation.</p>\
-<p>- <a href="https://www.americanrhetoric.com/speeches/antoninscaliaamericanexceptionalism.htm">Justice Scalia</a></p>\
+<p>- <a href="https://www.americanrhetoric.com/speeches/antoninscaliaamericanexceptionalism.htm">斯卡利亚大法官</a></p>\
 <p>美国政治两极化和对抗性愈演愈烈，许多人对此表达悲观与担忧，我倒不觉得是什么坏事，同质性和强共识往往导向大政府和对小流派的压制，还有中央集权化，相反，联邦层面的政治僵局（或少数派的绝望）会促使人们从另外几条途径推动自己的议题：1）司法路径，2）非政府组织，3）州和地方政治，4）技术和市场机制创新，这些途径的努力至少无害，常常有益，而且无论好坏，效果容易展示和比较，因而选择机制很快会起作用，未来十几年将是最高法院和州级改革的黄金时代。</p>\
 <p>—<a href="http://headsalon.org/archives/8056.html">辉格</a></p>'
 ];
 
+const queryString = window.location.search;
+const urlParams = new URLSearchParams(queryString);
+const q = urlParams.get('q');
+if (q) {
+  quotes = quotes.filter(s => s.toLowerCase().includes(q));
+}
 var i = Math.floor(Math.random() * quotes.length);
 var quote = quotes[i];
 document.getElementById("quote").innerHTML = quote;
