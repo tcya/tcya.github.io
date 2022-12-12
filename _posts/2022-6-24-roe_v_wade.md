@@ -7,7 +7,7 @@ title:  为什么金斯伯格反对罗诉韦德案
 
 <figure>
     <img src="/assets/images/RuthSentUs.png">
-    <figcaption>在草稿意见泄漏后就有女权组织公布了六位保守派大法官的家庭住址并组织大家去那抗议，这个组织的名字就叫做 "<a href="[https://youtu.be/hgV5czJA3JU?t=2215](https://www.ruthsent.us/)">Ruth Sent Us</a>" (露丝派我们来的)。</figcaption>
+    <figcaption>在草稿意见泄漏后就有女权组织公布了六位支持推翻罗案的大法官的家庭住址并组织大家去抗议，这个组织的名字就叫做 "<a href="https://www.ruthsent.us">Ruth Sent Us</a> (露丝派我们来的)"。</figcaption>
 </figure>
 
 1993年初，金斯伯格在纽约法学院的麦迪逊讲座做了一个[演讲](https://www.law.nyu.edu/sites/default/files/ECM_PRO_059254.pdf)，从她自己几十年的法律从业经验谈了她对美国法律制度的理解，非常精彩。在演讲的第二部分她论证了为什么过于激进的判决反而会阻碍社会的进步，“经验告诉我们，教义的四肢如果成形的太快，可能会被证明是不稳定的”，在她看来，罗案就是这么一个判决。罗案“不够审慎”的判决超出了最高法院的职责，“没有邀请立法者进行对话。相反，它似乎完全是为了把球从立法者的场地上拿走”，结果反而[团结了](https://translations.headsalon.org/post/2022/06/%E4%BF%9D%E5%AE%88%E6%B4%BE%E6%B3%95%E5%BE%8B%E8%BF%90%E5%8A%A8%E7%9A%84%E5%91%BD%E8%BF%90/)反对者，打断了原本正在自由化的堕胎法规进程，“相当长的一段时间内成功地将立法潮流转向相反的方向”。
