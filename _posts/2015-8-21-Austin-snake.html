@@ -38,6 +38,10 @@ title:  "奥斯汀游记：图灵斑图再探"
 <p>这就是上次提过的图灵斑图理论。数学上来讲就是这种形式的方程：</p>
 $$ \frac{\partial u}{\partial t} = \underbrace{D_u \frac{\partial^2 u}{\partial^2 x}}_{Diffusion} + \overbrace{f(u)}^{Reaction} $$
 <p>有点物理基础的应该能看明白，左边是浓度的变化，右边第一项代表扩散，第二项代表反应。反应项的形式多种多样，但要具有图灵提出的性质 (Turing instability) 则需要满足一些数学上的<a href="http://www.theshapeofmath.com/princeton/dynsys/turinginst2">要求</a>。这个方程一般得有两个，描述两种成形素，一种会激发色素的分泌 (activator)，另一种则会遏制它 (inhibitor)。图灵的功劳就在于他首先论证了这样简单的方程却可能导致非常复杂丰富的解图形。这样与梯度模型相比，图灵斑图理论就不要求细胞具有多重阈值响应，体貌的复杂由成形素的复杂分布承担了，而不论是扩散还是反应都是很常见的过程，所以这个模型显得更真实且富有美感。不过美的理论未必是对的，已经发现果蝇的形态发育是以梯度模型的方式<a href="https://en.wikipedia.org/wiki/Drosophila_embryogenesis#Gap_genes">发生</a>的。</p>
+<figure>
+    <img src="/assets/images/Turing_wave.png">
+    <figcaption>《达尔文的危险思想》第八章</figcaption>
+</figure>
 
 <h2>趋化性模型 (chemotaxis model)</h2>
 <p>上面两种模型都有一个不真实的地方，就是细胞是不动的，成形素分布好了细胞在原地负责分泌色素就好。但我们知道现实中细胞是会在化学刺激下移动的，把这点考虑进来我们就得到了趋化性模型，此时我们就需要多一个描述细胞密度n如何变化的方程了。</p>
